@@ -1,0 +1,47 @@
+[
+  {
+    "id": "B01-backup-array",
+    "backupInicialAceito": true,
+    "registrosAntesSerializar": [
+      "2026-11-09:read"
+    ],
+    "registrosDepoisSerializar": [],
+    "reabertura": "Backup inválido ou inconsistente. Seus dados atuais foram preservados.",
+    "bugConfirmado": true
+  },
+  {
+    "id": "B02-horario-fim-semana",
+    "horarioEditado": "10:30",
+    "horarioEfetivo": "09:00",
+    "bugConfirmado": true
+  },
+  {
+    "id": "B03-evento-sem-registro",
+    "aceito": true,
+    "total": {
+      "xp": 50,
+      "coins": 20
+    },
+    "habilidades": {
+      "reading": 0,
+      "fitness": 0,
+      "home": 0,
+      "dog": 0,
+      "python": 0
+    },
+    "bugConfirmado": true
+  },
+  {
+    "id": "B04-fim-trilha",
+    "fasesConcluidas": 120,
+    "proximaSessao": "Trilha concluída. Você pode criar uma missão de revisão nas configurações.",
+    "bugConfirmado": true
+  },
+  {
+    "id": "D01-120-fases",
+    "fases": 120,
+    "desafios": 600,
+    "fasesComExemploCodigo": 10,
+    "observacao": "Inventário de conteúdo, não prova de qualidade pedagógica ou bug."
+  }
+]
