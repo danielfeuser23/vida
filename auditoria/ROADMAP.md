@@ -1,6 +1,6 @@
 # Roadmap de evolução — Entre Trilhas
 
-> Atualização de 10/11/2026: sessões de Python independentes (1.1.0) e Hoje/agenda (1.2.0) estão entregues e publicadas. O piloto de conteúdo Python 1–7, versão 1.3.0, está concluído e validado; distribuição e estado da publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md).
+> Atualização de 10/11/2026: sessões de Python independentes (1.1.0), Hoje/agenda (1.2.0) e o piloto de conteúdo Python 1–7 (1.3.0) estão entregues, validados e publicados. Código do piloto em [5f89600605cbb4e1aafd423b6aab32b713932bd8](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8); distribuição e limites em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md).
 
 Este é um plano de produto e engenharia, não uma lista de recursos já implementados. Revisão em 10/11/2026. Leia `AUDITORIA.md` para resultados e limitações. Aumentar riqueza significa primeiro aumentar confiança e utilidade; quantidade de telas não é uma métrica de sucesso.
 
@@ -18,7 +18,7 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 
 **Entrega concluída e publicada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0.
 
-**Aprofundar as primeiras sete fases de Python — concluído e validado**, versão 1.3.0. Conteúdo para iniciantes, dicas/soluções recolhidas e testes locais, mantendo sessões e contadores independentes. Foram aprovados 208 testes Node, 25 testes de conteúdo/128 execuções Python e as suítes de navegador. Distribuição e publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog; não avançar para outra entrega neste ciclo.
+**Aprofundar as primeiras sete fases de Python — concluído, validado e publicado**, versão 1.3.0. Conteúdo para iniciantes, dicas/soluções recolhidas e testes locais, mantendo sessões e contadores independentes. Foram aprovados 208 testes Node, 25 testes de conteúdo/128 execuções Python e as suítes de navegador. Distribuição e publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog; não avançar para outra entrega neste ciclo.
 
 ## Sequência vigente solicitada
 

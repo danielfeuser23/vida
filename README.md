@@ -4,7 +4,7 @@ Um RPG de rotina em português, responsivo e sem dependências de instalação. 
 
 A versão **1.1.0**, com sessões de Python independentes, foi [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A versão **1.2.0 — Hoje e agenda unificada** foi implementada, validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/1d2aa88f288a8b979a40d61e1f0b486a040d695d). Veja testes, pacotes e limites no [relatório da entrega](auditoria/ENTREGA_HOJE_AGENDA.md). Não houve deploy do aplicativo.
 
-A entrega **1.3.0 — Primeiras sete fases de Python** aprofunda o começo da trilha para iniciantes. Estado de validação, fontes e limites em [ENTREGA_PYTHON_1_7.md](auditoria/ENTREGA_PYTHON_1_7.md).
+A entrega **1.3.0 — Primeiras sete fases de Python** aprofunda o começo da trilha para iniciantes. Foi validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8), sem deploy. Testes, fontes e limites em [ENTREGA_PYTHON_1_7.md](auditoria/ENTREGA_PYTHON_1_7.md).
 
 ## Abrir e usar
 

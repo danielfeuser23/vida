@@ -2,7 +2,7 @@
 
 **10/11/2026 · America/Sao_Paulo · aplicação 1.3.0 · progresso v1/v2 preservado.**
 
-**Entrega concluída e validada localmente; envio ao GitHub em preparação.** A publicação só será registrada após confirmação do envio. Não há deploy e nenhuma entrega posterior foi iniciada.
+**Entrega concluída, validada e publicada no GitHub.** Código em `main`, commit [5f89600605cbb4e1aafd423b6aab32b713932bd8](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8). O push e a referência remota foram confirmados. Este registro final e os pacotes documentais acompanham um fechamento posterior, sem alterar o código validado. Não há deploy e nenhuma entrega posterior foi iniciada.
 
 ## Base, escopo e sequência
 
@@ -76,7 +76,7 @@ A revisão pedagógica independente percorreu explicações, pré-requisitos, en
 | Novo fluxo de conteúdo, teclado, celular e zoom nativo | **7 testes / 20 contextos aprovados**, fonte e HTML único. Inclui backups v1/v2, restauração/reabertura, 35 exercícios históricos preservados, leitura/dicas/soluções sem gravar, sessão manual/fase sem pagamento duplicado, 320/430 px e dois perfis em zoom nativo de 200%. Repetição móvel após ajuste apenas da captura: 1 teste / 4 contextos aprovado. Capturas móveis e de zoom inspecionadas. |
 | Suítes anteriores de navegador | Smoke aprovado na fonte e no HTML único; integridade **14/36**, abertura **7/32**, sessões **14/32**, acessibilidade **16/44**, zoom nativo **6/12** e agenda **17/36** aprovados (testes/contextos ou perfis). Sem alteração das suítes anteriores. Para repetir o smoke no HTML único, foi trocada apenas a URL em memória, preservando todas as asserções e o arquivo original. |
 | HTML único, ZIPs e cópia extraída | Build determinístico, sintaxe do bundle e CRC/bytes dos dois ZIPs conferidos; 54 arquivos no app e 17 no pacote de auditoria. Na cópia extraída: sintaxe, **208 testes Node, 25 testes de conteúdo/128 execuções Python e build** aprovados. Quatro testes de conteúdo/12 contextos e um de compra/cancelamento/dois contextos aprovados nos dois artefatos. Os 14 arquivos de runtime/build extraídos são idênticos às fontes. A documentação final acompanha o reempacotamento. |
-| GitHub, commit separado e envio sem force push | Pendente; não afirmar publicação antes da confirmação |
+| GitHub, commit separado e envio sem force push | Confirmado em `main`: [5f89600605cbb4e1aafd423b6aab32b713932bd8](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8), descendente de `06f7e38`. Push normal e `git ls-remote` confirmaram o mesmo identificador. Sem deploy. |
 
 Comandos reprodutíveis: `npm run check`, `npm test`, `npm run test:content`, `npm run build`; com `npm start` ativo, `python3 tests/browser_content.py` e as suítes anteriores `browser_smoke.py`, `browser_integrity.py`, `browser_opening.py`, `browser_sessions.py`, `browser_accessibility.py`, `browser_zoom.py`, `browser_agenda.py`. Todos usam dados fictícios/contextos temporários, sem ler ou substituir progresso pessoal.
 
