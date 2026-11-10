@@ -86,6 +86,11 @@ class BrowserSessions(unittest.TestCase):
         button=self.page.locator(f'#mission-python [data-action="session"][data-mode="{mode}"]').first
         if not button.count():
             self.nav("python");button=self.page.locator('[data-action="session"][data-id="python"]').first
+        elif not button.is_visible():
+            completed=self.page.locator("details.completed-missions:has(#mission-python)")
+            if completed.count() and not completed.evaluate("el=>el.open"):
+                completed.locator("summary").click()
+            expect(button).to_be_visible()
         button.click()
         expect(self.page.get_by_role("dialog",name="Registrar sessão de Python",exact=True)).to_be_visible()
     def register(self,minutes,goal,exercises=0,kind="review",project=None,duplicate=False,mode="normal"):

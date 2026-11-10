@@ -1,6 +1,6 @@
 # Auditoria do Entre Trilhas — 05/11/2026
 
-> Atualização de 09/11/2026: R0a/R0b/R0c foram entregues; sessões de Python independentes estão implementadas e em conferência final. Consulte [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md) para a revisão atual. O diagnóstico histórico abaixo foi preservado; não representa a lista atual de pendências.
+> Atualização de 09/11/2026: R0a/R0b/R0c e [sessões de Python independentes](ENTREGA_SESSOES_PYTHON.md) foram entregues; a versão 1.1.0 foi publicada no GitHub. [Hoje e agenda unificada](ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada e validada; distribuição/publicação estão registradas separadamente. O diagnóstico histórico abaixo foi preservado; não representa a lista atual de pendências.
 
 Revisão histórica da versão 1.0.0 em `/workspace/vida`. O objetivo foi testar a base existente, reproduzir problemas e definir uma evolução verificável. A lógica não foi alterada naquela auditoria; as correções posteriores estão registradas nas entregas. O arquivo único foi regenerado pelo build.
 
@@ -10,7 +10,9 @@ R0a corrigiu B01/B04 e o falso sucesso de gravação B09. R0b corrigiu B08 (IDs 
 
 R0c corrigiu B02/B03/B06/B07/B10/B11 nos cenários documentados: preferência de sábado/domingo no editor e em Hoje, XP líquido por data de lançamento, foco estável, contraste medido, habilidades compatíveis e diálogos nomeados. A agenda fixa continua separada das missões e não foi unificada nesta entrega. Teclado, 320–430 CSS px e zoom nativo de 200% foram testados no Chromium; leitores de tela e outros navegadores ainda precisam de verificação. Isso não é certificação completa de acessibilidade.
 
-**B05 foi corrigido e passou na validação funcional da entrega em fechamento:** sessões podem somar duas horas sem concluir fase, projetos continuam entre dias e revisão/projeto livre ficam disponíveis após a fase 120. Os testes de navegador foram aprovados nos ambientes delimitados no relatório de sessões; pacote e publicação continuam em conferência. A próxima implementação autorizada, após o envio ao GitHub, é Hoje/agenda unificada.
+**B05 foi corrigido, validado e publicado em 1.1.0:** sessões podem somar duas horas sem concluir fase, projetos continuam entre dias e revisão/projeto livre ficam disponíveis após a fase 120. Testes e pacote foram conferidos nos ambientes delimitados no relatório de sessões. A publicação foi confirmada em `main` no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb), sem deploy.
+
+**Hoje/agenda 1.2.0 implementada e validada:** o código passa a calcular uma agenda comum e a contextualizar a próxima ação. A validação própria desta segunda entrega confirmou 197 testes Node e os fluxos de navegador delimitados no relatório de Hoje/agenda. Distribuição e envio ao GitHub são conferidos separadamente.
 
 Na revisão do novo modelo, também foram reproduzidos e corrigidos: sessão anterior à criação do projeto e colisão de ID entre projeto novo e projeto histórico em um backup. As respectivas regressões falharam antes das correções. A conferência de teclado/zoom nos formulários novos também integra a validação atual. O conteúdo abaixo preserva o diagnóstico histórico da versão 1.0.0; números de linha e resultados antigos descrevem aquela versão.
 

@@ -229,7 +229,13 @@ class BrowserOpening(unittest.TestCase):
                     self.wait_totals(50, 19)
                     self.assertEqual(sum(e["type"] == "refund" for e in self.state()["events"]), 1)
                     self.nav("today")
-                    self.page.locator('#mission-read [data-action="undo"]').first.click()
+                    undo_read = self.page.locator('#mission-read [data-action="undo"]').first
+                    if not undo_read.is_visible():
+                        completed = self.page.locator("details.completed-missions:has(#mission-read)")
+                        if completed.count() and not completed.evaluate("el=>el.open"):
+                            completed.locator("summary").click()
+                        expect(undo_read).to_be_visible()
+                    undo_read.click()
                     self.burst('[data-action="confirm-undo"]')
                     self.wait_totals(40, 14)
                     self.assertEqual(sum(e["type"] == "undo" for e in self.state()["events"]), 1)

@@ -1,6 +1,6 @@
 # Pesquisa de referências e evolução do Entre Trilhas
 
-> Estado em 09/11/2026: sessões de Python independentes foram implementadas e estão na conferência final descrita em [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md). Este documento preserva a pesquisa de 05/11/2026; não houve nova consulta online nessa atualização.
+> Estado em 09/11/2026: sessões de Python independentes foram validadas e publicadas em 1.1.0, conforme [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md). [Hoje e agenda 1.2.0](ENTREGA_HOJE_AGENDA.md) foi implementada e validada; consulte o relatório para distribuição/publicação. Este documento preserva a pesquisa de 05/11/2026; não houve nova consulta online nessa atualização.
 
 > Estado em 06/11/2026: R0a/R0b/R0c entregues; [ENTREGA_R0C.md](ENTREGA_R0C.md) documenta comportamento e acessibilidade. A pesquisa abaixo mantém sua data e suas limitações originais; não houve nova consulta online nesta entrega. Próxima expansão: separar sessões de Python das fases.
 

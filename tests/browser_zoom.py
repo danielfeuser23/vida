@@ -187,6 +187,78 @@ class NativeZoom(unittest.TestCase):
     def test_native_200_at_640_window(self):
         self.verify_window(640)
 
+    def verify_agenda_forms(self, window_width):
+        """Agenda e prévia em zoom real, preservando as regressões anteriores."""
+        for path in APP_PATHS:
+            with self.subTest(path=path, window_width=window_width):
+                with TemporaryDirectory(prefix="vida-agenda-zoom-") as profile:
+                    context = self.playwright.chromium.launch_persistent_context(
+                        profile, executable_path=os.environ.get("CHROMIUM_PATH", "/usr/bin/chromium"),
+                        headless=True, no_viewport=True, timezone_id="America/Sao_Paulo",
+                        reduced_motion="reduce", args=["--no-sandbox", f"--window-size={window_width},1000"],
+                    )
+                    type(self).contexts_started += 1
+                    try:
+                        settings = context.pages[0]
+                        settings.goto("chrome://settings/appearance")
+                        settings.locator("select#zoomLevel").select_option("2")
+                        page = context.new_page()
+                        errors = []
+                        page.on("pageerror", lambda error: errors.append(str(error)))
+                        page.clock.install(time=datetime(2026, 11, 5, 18, 0, tzinfo=timezone.utc))
+                        page.goto(BASE_URL + path)
+                        metrics = page.evaluate("({width:innerWidth,outer:outerWidth,dpr:devicePixelRatio,cssZoom:getComputedStyle(document.documentElement).zoom})")
+                        self.assertEqual(metrics["dpr"], 2, metrics)
+                        self.assertEqual(metrics["cssZoom"], "1", metrics)
+                        self.assertEqual(metrics["outer"], window_width, metrics)
+                        self.assertAlmostEqual(metrics["width"] * 2, window_width, delta=2)
+                        opener = page.locator('[data-action="schedule"]').first
+                        opener.focus()
+                        page.keyboard.press("Enter")
+                        dialog = page.get_by_role("dialog", name="Sua agenda", exact=True)
+                        expect(dialog).to_be_visible()
+                        self.dialog_fits(page, dialog)
+                        day = page.locator('#agenda-form [name="day"]')
+                        day.fill("2026-11-07")
+                        page.locator("#agenda-form").evaluate("form=>form.requestSubmit()")
+                        expect(page.locator("#agenda-table")).to_contain_text("07:20")
+                        for control in page.locator("#agenda-form button,#agenda-form input").all():
+                            if control.is_visible():
+                                box = control.bounding_box()
+                                self.assertGreaterEqual(box["x"], -1, box)
+                                self.assertLessEqual(box["x"] + box["width"], metrics["width"] + 1, box)
+                        for key in ("Tab", "Shift+Tab", "Tab", "Shift+Tab"):
+                            page.keyboard.press(key)
+                            self.assertTrue(dialog.evaluate("el=>el.contains(document.activeElement)"))
+                        page.keyboard.press("Escape")
+                        expect(dialog).not_to_be_visible()
+                        expect(opener).to_be_focused()
+                        page.locator('[data-nav="settings"]').first.click()
+                        edit = page.locator('[data-action="edit-mission"][data-id="read"]')
+                        edit.click()
+                        dialog = page.get_by_role("dialog", name="Editar missão", exact=True)
+                        preview = page.locator('#mission-form [data-action="preview-schedule"]')
+                        preview.focus()
+                        page.keyboard.press("Enter")
+                        expect(page.locator("#schedule-preview")).to_be_visible()
+                        self.dialog_fits(page, dialog)
+                        self.no_overflow(page, "agenda/preview")
+                        if path == "/" and window_width == 640:
+                            shot = context.new_cdp_session(page).send("Page.captureScreenshot", {"format": "png", "captureBeyondViewport": False})
+                            (ARTIFACTS / "agenda-preview-native200.png").write_bytes(base64.b64decode(shot["data"]))
+                        page.keyboard.press("Escape")
+                        expect(dialog).not_to_be_visible()
+                        expect(edit).to_be_focused()
+                        self.assertEqual(errors, [])
+                    finally:
+                        context.close()
+
+    def test_agenda_forms_native_200_at_1280_window(self):
+        self.verify_agenda_forms(1280)
+
+    def test_agenda_forms_native_200_at_640_window(self):
+        self.verify_agenda_forms(640)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

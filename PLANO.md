@@ -2,7 +2,7 @@
 
 Uma proposta editável de rotina com identidade própria de RPG acolhedor: você é um **Guardião do Cotidiano**, que constrói seu acampamento com pequenas ações. O personagem cresce com a prática registrada, sem perder níveis por faltas.
 
-Atualização de 09/11/2026: a implementação separa sessões de Python, avanço de fase e conclusão de projeto. A rotina abaixo continua uma proposta editável; a validação final da entrega está registrada em [ENTREGA_SESSOES_PYTHON.md](auditoria/ENTREGA_SESSOES_PYTHON.md). Hoje e a tabela fixa de agenda ainda serão unificados em uma entrega separada.
+Atualização de 09/11/2026: sessões de Python independentes foram validadas e [publicadas na versão 1.1.0](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A rotina abaixo continua uma proposta editável. A entrega separada [Hoje e agenda unificada](auditoria/ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada e passou na validação funcional; o fechamento de distribuição e publicação está no relatório.
 
 ## Premissas confirmadas e propostas
 
@@ -121,7 +121,7 @@ Nas folgas os passeios substituem os trajetos em uma missão diária combinada d
 | Sessão de filme | 60 | Até 120 min | 1 por fim de semana; sáb/dom 14:00–16:00 |
 | Minha grande recompensa | 120 como meta inicial | Definir antes de usar | 1 por semana; escolher algo que caiba na agenda e no orçamento real |
 
-Preços, duração e limites diário/semanal são editáveis. Horários de missões podem ser editados; as janelas de resgate são fixas nesta primeira versão. Os extras juntos precisam caber na janela: não é possível ocupar 14:00–16:00 com um filme completo e mais uma partida. Uma partida de até 20 minutos poderia caber na janela noturna após ajustar sua duração real. Os preços permitem guardar moedas mesmo sem tempo disponível para usá-las. Um filme mais longo exige reservar outra janela adequada.
+Preços, duração e limites diário/semanal são editáveis. As faixas base de extras permanecem as propostas acima; o modelo de agenda calcula o espaço que sobra nelas após considerar missões, transições e reservas. Os extras juntos precisam caber na janela: não é possível ocupar 14:00–16:00 com um filme completo e mais uma partida. Uma partida de até 20 minutos poderia caber na janela noturna após ajustar sua duração real. Os preços permitem guardar moedas mesmo sem tempo disponível para usá-las. Um filme mais longo exige reservar outra janela adequada.
 
 Resgatar debita uma vez e registra histórico; “usar” confirma consumo. Uma compra não usada pode ser cancelada com estorno único. Não há saldo negativo. Se uma correção de missão comprometer moedas já gastas, primeiro cancele compras ainda não usadas ou ajuste o registro com uma operação consistente; nunca esconda dívida negativa.
 
@@ -167,3 +167,11 @@ Essas adaptações, seus nomes, preços e regras de desbloqueio são propostas n
 ## Atualização de integridade R0a
 
 A restauração valida os dados e preserva a cópia anterior antes da substituição; a recuperação e os limites estão em [auditoria/ENTREGA_R0A.md](auditoria/ENTREGA_R0A.md). Essa entrega mantinha o formato v1. A entrega de sessões usa v2 para novos progressos e oferece ativação explícita e recuperável de v1, sem inventar minutos históricos. Horários, cuidados essenciais e orçamento diário deste plano foram preservados; o estudo passou a ser registrado separadamente dos marcos.
+
+## Atualização Hoje e agenda
+
+O modelo de 1.2.0 calcula os blocos das missões com frequência, preferências de dias úteis/folga e reagendamentos pontuais, junto aos compromissos reservados desta proposta. Hoje, consulta de agenda e disponibilidade da Loja passam a compartilhar esse cálculo. A prévia de edição contempla sete dias e impede novos conflitos; dados antigos com conflitos continuam restauráveis e recebem avisos.
+
+Python ocupa dois blocos de prática com dez minutos adicionais de pausa; 120 minutos normais continuam significando 120 minutos líquidos. O cuidado de passeio de folga ocupa duas partes, inicialmente 07:20–07:50 e 17:00–17:30; o segundo horário pode ser ajustado separadamente. Esses blocos não duplicam missões ou recompensas.
+
+Essa implementação não oferece edição arbitrária dos blocos fixos de refeições, trabalho, higiene, descanso e preparação. Também não cria novas missões, não reorganiza automaticamente pendências e não inventa estudo durante expediente ou trajeto. A conclusão e as evidências dessa entrega serão registradas em [ENTREGA_HOJE_AGENDA.md](auditoria/ENTREGA_HOJE_AGENDA.md).

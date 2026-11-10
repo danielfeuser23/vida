@@ -2,6 +2,8 @@
 
 Um RPG de rotina em português, responsivo e sem dependências de instalação. Feito com HTML, CSS e JavaScript; Python é a trilha de aprendizado, não um requisito para usar o app. Node.js 22 ou superior permite executar servidor, gerar o arquivo único e rodar os testes.
 
+A versão **1.1.0**, com sessões de Python independentes, foi [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A versão **1.2.0 — Hoje e agenda unificada** está implementada e validada; pacote e envio final estão sendo conferidos no [relatório da entrega](auditoria/ENTREGA_HOJE_AGENDA.md). Não houve deploy do aplicativo.
+
 ## Abrir e usar
 
 Na pasta do projeto:
@@ -36,7 +38,7 @@ Os horários alimentares e as porções do cachorro não foram confirmados. Os b
 - Cada navegador, perfil, aparelho, endereço e protocolo pode manter uma cópia diferente. Trocar de origem ou limpar dados pode fazer o progresso desaparecer daquela cópia. Exporte antes.
 - Backups JSON versões 1 e 2 são validados antes de substituir o progresso. Novos progressos usam a versão 2. Um backup v1 continua abrindo sem regravação até você ativar as sessões independentes; a migração mostra prévia e preserva uma cópia anterior. A restauração também recusa uma prévia desatualizada por outra aba. Não use dados de procedência desconhecida. Backup não é criptografado.
 - Data e renovação usam `America/Sao_Paulo`, incluindo uma página deixada aberta durante a virada do dia. O relógio do aparelho precisa estar correto.
-- Recompensas são limitadas pelo saldo, período e janelas: **21:30–21:50** todos os dias; também **14:00–16:00** nas folgas. Esses limites protegem o tempo reservado para alimentação, lazer básico e sono. As janelas são fixas nesta primeira versão; editar uma missão não replaneja toda a agenda.
+- Recompensas são limitadas pelo saldo, período e faixas para extras: **21:30–21:50** todos os dias; também **14:00–16:00** nas folgas. Esses limites protegem alimentação, lazer básico e sono. No modelo de agenda de 1.2.0, a janela realmente livre exclui os blocos ocupados pelas missões, transições e outras reservas; moedas não criam tempo extra.
 - XP e moedas são separados. Missões comuns têm uma conclusão por ocorrência, com upgrade mínima→normal apenas pela diferença. Em Python, as sessões somam os minutos do dia e pagam apenas a diferença até o limite diário; fase e projeto não geram outro ganho. Duas habilidades repartem o XP.
 - **XP líquido do dia** soma ganhos e correções lançados naquela data. Exemplo: leitura +10 ontem e correção −10 hoje mantêm ontem em +10, mostram hoje em −10 e deixam o total geral em zero. O Histórico identifica a data da atividade corrigida; o gráfico mostra débitos abaixo de zero. Corrigir uma marcação não é punição por faltar.
 - Abas no mesmo navegador usam Web Locks quando disponível para serializar gravações; cada ação persiste uma transação completa. Navegadores atuais são recomendados. Sem Web Locks, use apenas uma aba para evitar gravações concorrentes.
@@ -114,7 +116,7 @@ A entrega R0c, na aplicação **1.0.3**, corrigiu o foco ao concluir missões e 
 
 O editor apresenta habilidades principal e secundária, impede escolhas iguais e explica erros nos campos. O cartão mostra a habilidade secundária escolhida; o XP é repartido, sem segundo pagamento. Dia difícil e cuidados essenciais foram preservados.
 
-Os horários **seg–sex** e **sáb/dom** ficam explícitos. Backups antigos sem preferência de fim de semana preservam a proposta de 09:00 para exercício/casa quando ainda usam o horário original; horários antigos personalizados passam a valer também nas folgas. O reagendamento pontual continua prevalecendo. A tabela de **Ver agenda** ainda é a proposta fixa: editar uma missão não reorganiza essa tabela ou o restante do dia.
+Os horários **seg–sex** e **sáb/dom** ficam explícitos. Backups antigos sem preferência de fim de semana preservam a proposta de 09:00 para exercício/casa quando ainda usam o horário original; horários antigos personalizados passam a valer também nas folgas. O reagendamento pontual continua prevalecendo. Na entrega R0c, a tabela de **Ver agenda** ainda era fixa; a unificação com as preferências é o escopo da implementação 1.2.0 descrita abaixo.
 
 Backups válidos anteriores continuam aceitos e não são convertidos nem regravados ao abrir. A preferência opcional `weekendTime` é gravada ao editar uma missão, mantendo a versão 1. **Use a aplicação atual para restaurar backups com esse campo**; versões anteriores não reconhecem essa extensão. Recuperação anterior, erros de armazenamento e IDs criptográficos continuam protegidos pelos testes.
 
@@ -153,7 +155,21 @@ Veja [ENTREGA_SESSOES_PYTHON.md](auditoria/ENTREGA_SESSOES_PYTHON.md) para a fó
 python3 tests/browser_sessions.py
 ```
 
-A validação funcional passou: **155 testes Node**, smoke e suítes de integridade, abertura, sessões, acessibilidade e zoom nativo. Os resultados e seus limites estão no relatório. Os pacotes foram conferidos também após extração; o envio ao GitHub ainda será confirmado. Após a publicação confirmada, a próxima entrega autorizada é **melhorar Hoje e unificar a agenda**, em um ciclo separado.
+A validação de 1.1.0 passou: **155 testes Node**, smoke e suítes de integridade, abertura, sessões, acessibilidade e zoom nativo. Os pacotes foram conferidos também após extração. A publicação foi confirmada no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). Depois disso, foi iniciada a entrega separada **Hoje e agenda unificada**.
+
+## Hoje e agenda unificada
+
+A versão 1.2.0 usa um modelo único para Hoje, **Ver agenda** e disponibilidade da Loja. Passaram 197 testes Node, 17 cenários de agenda nos dois formatos e as suítes anteriores, incluindo teclado, backup e zoom nativo. Os limites de evidência estão no relatório da entrega.
+
+- **Hoje:** próxima ação com contexto de horário, distinção entre bloco atual e missão futura, opcionais concluídas recolhíveis e cuidados essenciais sempre visíveis. O painel muda textos por minuto sem recriar seus controles. Trabalho, trajeto, refeições, pausas e descanso não viram sugestões de estudo.
+- **Agenda:** consulte uma data pelos controles de dia anterior/próximo, Hoje, Amanhã e Próxima folga. A tabela apresenta missões, blocos reservados, pausas, reservas e tempo flexível calculados com as preferências atuais. Consultar uma data passada não recria o planejamento histórico; os registros reais permanecem no Histórico.
+- **Python e passeios:** os 120 minutos normais são mostrados em dois blocos de 60 minutos, com dez minutos de pausa fora da contagem. O passeio de folga aparece em dois blocos de 30 minutos. Em Ajustes, o segundo horário desse passeio tem campo próprio; a conclusão continua sendo uma missão diária única que confirma os dois cuidados.
+- **Editar:** a prévia mostra os próximos sete dias. Novos conflitos precisam ser resolvidos antes de salvar. Conflitos de dados antigos aparecem como avisos e não invalidam um backup por si só. Um horário legado pode continuar sinalizado enquanto você combina uma rotina possível.
+- **Loja:** mostra saldo que falta, limites e uma janela possível antes da reserva. O cálculo considera os mesmos blocos da agenda; a compra continua descontando uma vez e o cancelamento válido estorna uma vez.
+
+A janela do dia continua 05:30–22:30. Os blocos reservados de trabalho, refeições, preparação, higiene, lazer básico e desaceleração vêm da proposta do PLANO e ainda não possuem editor completo. Esta fatia não cria/arquiva missões ou recompensas e não implementa calendário pessoal arbitrário.
+
+O campo opcional do segundo passeio (`secondTime`) é uma extensão aceita pela versão atual em backups v1/v2; versões anteriores, inclusive 1.1.0, podem recusá-lo. Abrir dados existentes não muda automaticamente seu formato nem suas preferências. A contabilidade de sessões, fases e pontos permanece a da entrega 1.1.0.
 
 ## Melhoria planejada: finanças pessoais
 

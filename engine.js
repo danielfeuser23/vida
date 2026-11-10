@@ -1,6 +1,7 @@
 import {defaultMissions,defaultRewards} from './data.js';
 import {createId} from './ids.js';
 import {roadmap} from './roadmap.js';
+import * as A from './agenda.js';
 export const TIMEZONE='America/Sao_Paulo';
 export const dayKey=(now=new Date())=>new Intl.DateTimeFormat('sv-SE',{timeZone:TIMEZONE,year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
 export const weekday=day=>new Date(day+'T12:00:00Z').getUTCDay();
@@ -51,7 +52,7 @@ export function undo(s,key,day){const r=s.records[key];if(!r)return false;
  if(s.version===1&&r.lesson)s.lessons=s.lessons.filter(l=>l.id!==r.lesson);
  event(s,day,'undo','Correção: '+r.title,-r.xp,-r.coins,{key,skills:Object.fromEntries(Object.entries(r.skills).map(([k,v])=>[k,-v])),originalDay:r.day},operationId);
  delete s.records[key];return true;}
-export function windows(day){return [0,6].includes(weekday(day))?[['14:00','16:00'],['21:30','21:50']]:[['21:30','21:50']];}
+export function windows(day){return A.baseExtraWindows(day);}
 export const minutes=t=>Number(t.slice(0,2))*60+Number(t.slice(3));
 export const timeString=n=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
 export function timeNow(now=new Date()){return new Intl.DateTimeFormat('en-GB',{timeZone:TIMEZONE,hour:'2-digit',minute:'2-digit',hour12:false}).format(now);}
@@ -60,6 +61,10 @@ export function reservation(s,r,day,start,nowMinute=0){
  if(st<nowMinute)throw Error('Esse horário já passou. Escolha uma janela que ainda esteja disponível hoje.');
  if(!windows(day).some(([a,b])=>st>=minutes(a)&&en<=minutes(b)))throw Error('A recompensa precisa caber inteira em uma janela livre, antes de desacelerar.');
  if(s.purchases.some(p=>p.day===day&&p.status!=='cancelled'&&st<minutes(p.end)&&en>minutes(p.start)))throw Error('Já existe uma recompensa reservada nesse horário.');
+ if(s.version===2){
+  if(!availableRewardWindows(s,day,nowMinute).some(([a,b])=>st>=minutes(a)&&en<=minutes(b)))throw Error('Há uma missão, pausa ou bloco reservado nesse horário da agenda. Escolha outra janela livre.');
+  return timeString(en);
+ }
  if(missionsFor(s,day).some(m=>{const end=minutes(m.time)+m.minutes;return st<end&&en>minutes(m.time);}))throw Error('Há uma missão nesse horário. Ajuste a missão ou escolha outra janela.');
  return timeString(en);
 }
@@ -75,7 +80,81 @@ export function buy(s,id,day,start,requestId,nowMinute=0){
 }
 export function cancel(s,id,day){const p=s.purchases.find(p=>p.id===id);if(!p||p.status==='cancelled')return false;if(p.status==='used')throw Error('Uma recompensa já utilizada não pode ser cancelada.');const operationId=createId();p.status='cancelled';event(s,day,'refund','Cancelamento: '+p.title,0,p.price,{purchaseId:p.id},operationId);return true;}
 export function usePurchase(s,id){const p=s.purchases.find(p=>p.id===id);if(!p||p.status!=='reserved')return false;p.status='used';return true;}
-export function reschedule(s,id,from,to,time){const m=s.config.missions.find(m=>m.id===id);if(!m)throw Error('Missão inexistente.');if(m.essential)throw Error('Cuidados essenciais não são adiados; combine ajuda e ajuste o horário.');if(s.records[from+':'+id])throw Error('Desfaça o registro antes de reagendar.');if(s.version===2&&id==='python'&&studySessions(s).some(item=>!item.corrected&&item.day===from))throw Error('Corrija as sessões ativas deste dia antes de reagendar.');if(to<from)throw Error('Escolha hoje ou uma data posterior.');s.overrides[from+':'+id]={skip:true};s.overrides[to+':'+id]={include:true,time};}
+export function reschedule(s,id,from,to,time){const m=s.config.missions.find(m=>m.id===id);if(!m)throw Error('Missão inexistente.');if(m.essential)throw Error('Cuidados essenciais não são adiados; combine ajuda e ajuste o horário.');if(s.records[from+':'+id])throw Error('Desfaça o registro antes de reagendar.');if(s.version===2&&id==='python'&&studySessions(s).some(item=>!item.corrected&&item.day===from))throw Error('Corrija as sessões ativas deste dia antes de reagendar.');if(to<from)throw Error('Escolha hoje ou uma data posterior.');if(s.version===2){if(!dateValid(from)||!dateValid(to)||!clock(time))throw Error('Escolha uma data e um horário válidos.');const next=structuredClone(s);next.overrides[from+':'+id]={skip:true};next.overrides[to+':'+id]={include:true,time};for(const day of new Set([from,to]))checkScheduleChange(s,next,day,1);s.overrides=next.overrides;}else{s.overrides[from+':'+id]={skip:true};s.overrides[to+':'+id]={include:true,time};}}
+function scheduleDay(day){
+ if(!dateValid(day))throw Error('Escolha uma data válida para consultar a agenda.');
+}
+function scheduleMinute(value){
+ if(!int(value,1439))throw Error('Escolha um horário válido, em minutos entre 0 e 1439.');
+}
+function scheduledMissions(s,day){
+ return missionsFor(s,day).map(m=>{
+  if(m.id!=='python'||s.version!==2)return m;
+  const progress=studyProgress(s,day);
+  return {...m,minutes:progress.goal,minMinutes:progress.minMinutes,remainingMinutes:Math.max(0,progress.goal-progress.minutes)};
+ });
+}
+export function agendaFor(s,day){
+ scheduleDay(day);
+ const agenda=A.buildAgenda(s,day,scheduledMissions(s,day));
+ return {...agenda,conflicts:agenda.conflicts.map(c=>({...c,day,message:c.reason}))};
+}
+export function availableRewardWindows(s,day,nowMinute=0){
+ scheduleDay(day);scheduleMinute(nowMinute);
+ return A.availableExtra(s,day,scheduledMissions(s,day),nowMinute);
+}
+export function nextAction(s,day,nowMinute){
+ scheduleDay(day);scheduleMinute(nowMinute);
+ const missions=scheduledMissions(s,day),statuses={};
+ for(const m of missions){
+  if(m.id==='python'&&s.version===2){
+   const progress=studyProgress(s,day);
+   statuses[m.id]=progress.normal?'normal':progress.minimum||progress.legacy?'minimum':null;
+  }else{
+   const record=s.records[day+':'+m.id];
+   statuses[m.id]=record?(record.rank===2?'normal':'minimum'):null;
+  }
+ }
+ return A.nextAgendaAction(s,day,missions,nowMinute,statuses);
+}
+export function rewardOptions(s,id,day,nowMinute=0){
+ scheduleDay(day);scheduleMinute(nowMinute);
+ const r=s.config.rewards.find(item=>item.id===id);
+ if(!r)throw Error('Recompensa não encontrada.');
+ const neededCoins=Math.max(0,r.price-totals(s).coins);
+ const slots=availableRewardWindows(s,day,nowMinute).flatMap(([a,b])=>
+  minutes(b)-minutes(a)>=r.minutes?[{start:a,end:timeString(minutes(a)+r.minutes)}]:[]);
+ const common={neededCoins,slots,price:r.price,minutes:r.minutes};
+ if(r.weekend&&![0,6].includes(weekday(day)))return {...common,allowed:false,reason:'Esta recompensa é reservada para sábado ou domingo.'};
+ const limited=s.purchases.some(p=>p.rewardId===id&&p.status!=='cancelled'&&(r.limit==='week'?weekKey(p.day)===weekKey(day):p.day===day));
+ if(limited)return {...common,allowed:false,reason:'Limite de resgate atingido neste período. Cancelar uma reserva não usada libera o limite.'};
+ if(neededCoins)return {...common,allowed:false,reason:'Faltam '+neededCoins+' moedas para este extra. Descanso e lazer básico continuam livres.'};
+ if(!slots.length)return {...common,allowed:false,reason:'Não há janela livre para '+r.minutes+' minutos de extra neste dia, respeitando a agenda e o horário de dormir.'};
+ return {...common,allowed:true,reason:'Cabe em '+slots[0].start+'–'+slots[0].end+'; depois da reserva restam '+(totals(s).coins-r.price)+' moedas.'};
+}
+export function schedulePreview(s,id,values,fromDay=dayKey()){
+ scheduleDay(fromDay);
+ const next=structuredClone(s),m=next.config.missions.find(item=>item.id===id);
+ if(!m)throw Error('Missão não encontrada para a prévia.');
+ Object.assign(m,values);
+ if(!m.secondary)delete m.secondary;
+ if(!m.secondTime)delete m.secondTime;
+ validateState(next);
+ const days=Array.from({length:7},(_,i)=>{
+  const day=addDays(fromDay,i);return {day,agenda:agendaFor(next,day)};
+ });
+ return {days,conflicts:days.flatMap(item=>item.agenda.conflicts)};
+}
+export function checkScheduleChange(before,next,fromDay=dayKey(),days=7){
+ scheduleDay(fromDay);
+ if(!int(days,14)||days<1)throw Error('Escolha entre 1 e 14 dias para conferir a agenda.');
+ for(let i=0;i<days;i++){
+  const day=addDays(fromDay,i),previous=new Set(agendaFor(before,day).conflicts.map(c=>c.id));
+  const added=agendaFor(next,day).conflicts.find(c=>!previous.has(c.id));
+  if(added)throw Error('Conflito de horários em '+day.split('-').reverse().join('/')+': '+added.reason+' ('+added.start+'–'+added.end+').');
+ }
+ return true;
+}
 const dateValid=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&!isNaN(Date.parse(d+'T12:00:00Z'))&&new Date(d+'T12:00:00Z').toISOString().slice(0,10)===d;
 const int=(n,max=1000000)=>Number.isSafeInteger(n)&&n>=0&&n<=max;
 const signed=n=>Number.isSafeInteger(n)&&Math.abs(n)<=1000000;
@@ -135,10 +214,11 @@ export function validateState(s){
   requireValid(Array.isArray(s.config.missions)&&s.config.missions.length>=1&&s.config.missions.length<=100&&Array.isArray(s.config.rewards)&&s.config.rewards.length<=100);
   const missionIds=new Set(),rewardIds=new Set();
   for(const m of s.config.missions){
-   shape(m,['id','title','action','minimum','criterion','time','days','skill','xp','coins','minXp','minCoins','minutes','minMinutes'],['secondary','essential','weekendTime']);
+   shape(m,['id','title','action','minimum','criterion','time','days','skill','xp','coins','minXp','minCoins','minutes','minMinutes'],['secondary','essential','weekendTime','secondTime']);
    requireValid(identifier(m.id)&&!missionIds.has(m.id)&&['title','action','minimum','criterion'].every(k=>text(m[k]))&&clock(m.time)&&Array.isArray(m.days)&&m.days.length<=7&&m.days.every(d=>int(d,6))&&new Set(m.days).size===m.days.length&&skillIds.includes(m.skill));
    requireValid((!own(m,'secondary')||skillIds.includes(m.secondary))&&m.skill!==m.secondary&&(!own(m,'essential')||typeof m.essential==='boolean'));
    requireValid(!own(m,'weekendTime')||clock(m.weekendTime));
+   requireValid(!own(m,'secondTime')||m.id==='weekend-walk'&&clock(m.secondTime));
    requireValid(['xp','coins','minXp','minCoins','minutes','minMinutes'].every(k=>int(m[k],10000))&&m.minXp<=m.xp&&m.minCoins<=m.coins&&m.minutes>=1&&m.minMinutes>=1);
    missionIds.add(m.id);
   }

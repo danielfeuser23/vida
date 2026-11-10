@@ -156,19 +156,38 @@ class BrowserAccessibility(unittest.TestCase):
                 with self.subTest(path=path, mission=mission):
                     self.start(path)
                     self.open_editor(mission)
-                    self.page.locator('#mission-form [name="time"]').fill("06:40")
+                    self.page.locator('#mission-form [name="time"]').fill("21:30")
                     weekend = self.page.locator('#mission-form [name="weekendTime"]')
                     expect(weekend).to_have_count(1)
                     weekend.fill("10:45")
                     self.page.locator('#mission-form button[type="submit"]').click()
                     expect(self.page.locator("#modal")).not_to_be_visible()
                     saved = next(m for m in self.state()["config"]["missions"] if m["id"] == mission)
-                    self.assertEqual((saved["time"],saved["weekendTime"]), ("06:40","10:45"))
+                    self.assertEqual((saved["time"],saved["weekendTime"]), ("21:30","10:45"))
                     self.start(path, self.raw(), day=day)
                     expect(self.page.locator(f"#mission-{mission} .mission-meta")).to_contain_text("10:45")
                     self.page.reload()
                     expect(self.page.locator(f"#mission-{mission} .mission-meta")).to_contain_text("10:45")
                     self.no_errors()
+
+    def test_weekday_time_colliding_with_departure_preparation_is_rejected(self):
+        for path in APP_PATHS:
+            with self.subTest(path=path):
+                self.start(path)
+                self.open_editor("exercise")
+                before = self.raw()
+                self.page.locator('#mission-form [name="time"]').fill("06:40")
+                self.page.locator('#mission-form button[type="submit"]').click()
+                expect(self.page.locator("#mission-form")).to_be_visible()
+                expect(self.page.locator("#mission-form [role=alert]")).to_contain_text(re.compile("conflit|sobrep|ocupad", re.I))
+                expect(self.page.locator("#modal")).not_to_contain_text(re.compile("backup inválido", re.I))
+                expect(self.page.locator('#mission-form [name="time"]')).to_have_value("06:40")
+                error_id = self.page.locator("#mission-form [role=alert]").get_attribute("id")
+                self.assertTrue(error_id)
+                self.assertIn(error_id, (self.page.locator('#mission-form [name="time"]').get_attribute("aria-describedby") or "").split())
+                expect(self.page.locator('#mission-form [name="time"]')).to_have_attribute("aria-invalid", "true")
+                self.assertEqual(self.raw(), before)
+                self.no_errors()
 
     def test_today_xp_is_net_after_correction(self):
         for path in APP_PATHS:
@@ -189,7 +208,7 @@ class BrowserAccessibility(unittest.TestCase):
                 self.start(path)
                 self.complete()
                 self.page.clock.fast_forward(24*60*60*1000)
-                expect(self.page.locator(".hero .chip")).to_contain_text("6 de novembro")
+                expect(self.page.locator(".today-date")).to_contain_text("6 de novembro")
                 self.nav("history")
                 self.undo()
                 self.wait_totals(0,0)

@@ -2,7 +2,7 @@
 
 **09/11/2026 · America/Sao_Paulo · aplicação 1.1.0 · formatos de progresso v1 e v2.**
 
-**Estado desta revisão: implementação, testes e pacotes concluídos.** O envio ao GitHub será confirmado separadamente após o commit. Não houve deploy do aplicativo.
+**Estado desta revisão: implementação, testes e pacotes concluídos; código publicado no GitHub em 09/11/2026.** O envio foi confirmado em `main` no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). Não houve deploy do aplicativo.
 
 ## Problema e comportamento resultante
 
@@ -118,7 +118,7 @@ As mudanças no smoke acompanham a ação nova: primeiro registrar a sessão de 
 | `python3 tests/browser_sessions.py` | **14 testes / 32 contextos aprovados**, aplicação modular e HTML único. |
 | Exemplos Python | Dez exemplos existentes (fases 1, 2, 3, 4, 5, 6, 8, 13, 20 e 25) passaram na compilação sintática/AST; não é execução ou revisão dos 600 desafios. |
 | Pacotes | ZIPs atualizados; CRC e conteúdo comparados com as fontes, bundle sintaticamente válido e build determinístico. Na cópia extraída: sintaxe, 155 testes Node e build aprovados; quatro testes de navegador/oito contextos nos dois artefatos aprovados (sessões, migração após 120 fases, restauração/reabertura e falha de gravação). |
-| GitHub | PENDENTE — enviar somente depois da validação; registrar commit/PR após confirmar o resultado. |
+| GitHub | Publicação confirmada em `main`: [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb), preservando o commit inicial existente e sem force push. |
 
 Todos os testes usam dados fictícios e perfis/contextos separados. Nenhum progresso pessoal do usuário é acessado ou sobrescrito.
 
@@ -130,11 +130,11 @@ Todos os testes usam dados fictícios e perfis/contextos separados. Nenhum progr
 - O limite técnico é 1.440 minutos ativos por dia e 1.000 exercícios por sessão; isso não é meta de estudo nem cria tempo na agenda.
 - Não há testes em aparelhos físicos, Safari, Firefox ou leitores de tela. Chromium automatizado, contraste amostrado e zoom nativo não equivalem a certificação WCAG.
 - HTTP de rede local e HTTPS seguem os cenários simulados documentados; não houve verificação de roteador, certificado ou handshake TLS. O caminho `file://` segue sem homologação funcional; use o HTML servido.
-- A agenda fixa ainda não acompanha automaticamente todas as edições. A unificação de Hoje/Agenda/Loja pertence à próxima entrega.
+- Na versão 1.1.0 aqui entregue, a agenda fixa ainda não acompanhava automaticamente todas as edições. A unificação de Hoje/Agenda/Loja pertence à entrega separada [Hoje/agenda](ENTREGA_HOJE_AGENDA.md).
 - Finanças F1–F3, novas fases, dicas/checklist por exercício, avatar, PWA e sincronização não foram implementados neste ciclo.
 
 ## Próxima entrega e publicação
 
-A solicitação atual autoriza publicar o código validado em `danielfeuser23/vida`, preservando o histórico existente, sem force push e sem deploy. O histórico remoto consultado tinha apenas o commit inicial com README; o envio efetivo ainda precisa ser confirmado na tabela acima.
+A solicitação autorizou publicar o código validado em `danielfeuser23/vida`, preservando o histórico existente, sem force push e sem deploy. O histórico remoto consultado tinha apenas o commit inicial com README. O envio da versão 1.1.0 foi confirmado no commit ligado acima.
 
-Depois de concluir as verificações e confirmar a publicação desta versão, executar **melhorar Hoje e unificar a agenda** em uma entrega separada, com seus testes, documentação e pacote. Não avançar além desse ciclo. Descanso, refeições, lazer básico e cuidados essenciais continuam preservados e independentes de moedas.
+Depois da confirmação desta publicação, foi iniciada **melhorar Hoje e unificar a agenda** em uma entrega separada, com seus testes, documentação e pacote. Seu estado está em [ENTREGA_HOJE_AGENDA.md](ENTREGA_HOJE_AGENDA.md); a publicação de 1.1.0 não comprova a validação ou publicação de 1.2.0. Não avançar além desse ciclo. Descanso, refeições, lazer básico e cuidados essenciais continuam preservados e independentes de moedas.

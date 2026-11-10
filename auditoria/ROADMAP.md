@@ -1,6 +1,6 @@
 # Roadmap de evolução — Entre Trilhas
 
-> Atualização de 09/11/2026: R0a/R0b/R0c permanecem verificadas. Sessões de Python independentes foram implementadas e passaram na validação funcional; pacotes conferidos; publicação aguardando confirmação na entrega [SESSOES_PYTHON](ENTREGA_SESSOES_PYTHON.md). Após o envio confirmado ao GitHub, a próxima entrega autorizada é Hoje e agenda unificada, em ciclo separado.
+> Atualização de 09/11/2026: sessões de Python independentes foram concluídas, validadas e publicadas em `main` no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A entrega separada [Hoje e agenda unificada](ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada e validada; distribuição/publicação estão sendo encerradas no relatório.
 
 Este é um plano de produto e engenharia, não uma lista de recursos já implementados. Revisão em 09/11/2026. Leia `AUDITORIA.md` para resultados e limitações. Aumentar riqueza significa primeiro aumentar confiança e utilidade; quantidade de telas não é uma métrica de sucesso.
 
@@ -14,23 +14,23 @@ Indicadores úteis: tempo para registrar uma missão; sessões de Python registr
 
 R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.md), [ENTREGA_R0B.md](ENTREGA_R0B.md) e [ENTREGA_R0C.md](ENTREGA_R0C.md). A geração de IDs funciona nos contextos testados, inclusive HTTP não confiável simulado. Horários, XP visual, foco, contraste e editor foram corrigidos. A matriz de abertura distingue servidor local real, origens simuladas e aparelhos ainda não testados. Não houve publicação nem declaração de conformidade completa de acessibilidade.
 
-**Entrega em fechamento: sessões de Python independentes**, resolvendo B05 com registro de duração, fases/projetos sem novo pagamento e migração recuperável v1→v2. A prática depois da fase 120 passou nos testes. A validação funcional confirmou 155 testes Node e, no navegador, smoke, integridade, abertura, sessões, acessibilidade e zoom nativo. O pacote foi conferido na cópia extraída; o envio ao GitHub aguarda confirmação; o relatório distingue resultados concluídos e pendentes.
+**Sessões de Python independentes — entregues e publicadas:** B05 resolvido, com registro de duração, fases/projetos sem novo pagamento e migração recuperável v1→v2. A prática depois da fase 120 passou nos testes. A versão 1.1.0 teve 155 testes Node e, no navegador, smoke, integridade, abertura, sessões, acessibilidade e zoom nativo aprovados. O pacote foi conferido na cópia extraída; a publicação foi confirmada no commit ligado acima. Consulte [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md).
 
-**Próxima entrega autorizada: melhorar Hoje e unificar a agenda**, depois da validação e publicação da versão revisada no GitHub. A autorização atual abrange esse ciclo seguinte; não abrange finanças, novas fases, avatar, PWA ou sincronização.
+**Entrega implementada e validada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0. A autorização atual abrange esse ciclo, sem avançar além dele. Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog.
 
 ## Sequência vigente solicitada
 
 | Ordem | Entrega | Dependência e aceite principal |
 |---:|---|---|
 | 1 | **Concluir a confiabilidade — entregue** | R0a/R0b/R0c verificadas, com limites de ambiente e acessibilidade documentados. Manter regressões nas entregas seguintes. |
-| 2 | **Separar sessões de Python da conclusão de fases — conferência final** | Implementado: várias sessões/dia, revisão após fase 120, fases/projetos independentes e pontuação única até o teto. Concluir verificações e publicação antes da próxima entrega. |
-| 3 | **Melhorar Hoje e unificar a agenda** | Integrar modelo de sessão. Próxima ação acessível; Hoje/Agenda/Loja usam os mesmos blocos e conflitos. |
+| 2 | **Separar sessões de Python da conclusão de fases — entregue** | Versão 1.1.0 validada e publicada: várias sessões/dia, revisão após fase 120, fases/projetos independentes e pontuação única até o teto. |
+| 3 | **Melhorar Hoje e unificar a agenda — validada** | Modelo único de blocos, próxima ação pelo horário, consulta por data, prévia semanal/conflitos e disponibilidade da Loja; 197 testes Node, novas regressões de agenda e suítes anteriores aprovados; distribuição/publicação no relatório. |
 | 4 | **Aprofundar as primeiras sete fases de Python** | Exercícios/sessões separados. Exemplos, pistas e testes locais autorais conferidos antes de expandir o catálogo. |
 | 5 | **Enriquecer avatar, refúgio e loja** | Economia estável. Identidade própria, cosméticos por marcos, extras que cabem no tempo, poucos cliques. |
 | 6 | **Adicionar revisão semanal acolhedora** | Totais confiáveis e rotina integrada. Manter ou ajustar sem metas automáticas ou punições. |
 | 7 | **Finanças pessoais — melhoria solicitada em 06/11/2026** | Entregas F1–F3 abaixo: gastos mensais, quanto foi guardado e investimentos. Dinheiro real separado da economia do RPG. Ainda não implementado. |
 
-As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de implementação é a sequência acima. A posição de finanças após as seis entregas anteriores é uma proposta editável; a próxima implementação é Hoje/agenda, condicionada ao fechamento e envio de sessões. Persistência avançada, offline e sincronização ficam no backlog posterior. Porte e prazos precisam ser avaliados em cada etapa; não são compromissos de calendário.
+As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de implementação é a sequência acima. A posição de finanças após as seis entregas anteriores é uma proposta editável; a implementação atual é Hoje/agenda, após o fechamento e envio de sessões. Persistência avançada, offline e sincronização ficam no backlog posterior. Porte e prazos precisam ser avaliados em cada etapa; não são compromissos de calendário.
 
 ## Confiabilidade — progresso e pendências
 
@@ -44,20 +44,24 @@ As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de 
 
 ## Área: Hoje e agenda única
 
+**Fatia atual 1.2.0, implementada e validada:** cálculo comum para Hoje/Agenda/Loja; próxima ação pelo horário; opcionais concluídas recolhíveis; essenciais visíveis; dois blocos de Python com pausa e dois passeios na folga; consulta por data; prévia de sete dias no editor e recusa de novos conflitos; avisos para conflitos legados; condições de resgate antes da compra. A publicação de 1.1.0 não valida automaticamente esta implementação.
+
+**Fora desta fatia:** criar/arquivar missões ou recompensas, editor arbitrário de todos os compromissos fixos, calendário externo, mudanças automáticas por pendência, modelos pessoais completos de dia e avaliação com leitores de tela/aparelhos não disponíveis. Esses itens continuam objetivos do planejamento amplo abaixo.
+
 - Manter as correções de R0c: foco após registro, navegação e fechamento de modal; cronômetro atualiza texto sem destruir os controles.
 - Manter diálogos nomeados, contraste e alvos verificados em R0c; ampliar avaliação com leitores de tela, outros navegadores e aparelhos físicos.
 - Destacar próxima ação que cabe no tempo disponível; distinguir pendências, missões disponíveis e programação futura. Nunca transformar pendência em dívida.
 - Recolher concluídas e reduzir texto repetido nos cartões; permitir detalhes sob demanda. Manter botão de versão mínima fácil de alcançar.
 - Criar um modelo único de agenda usado por Hoje, Ver agenda e Loja. Representar dois blocos de Python com pausa e dois passeios de folga; separar duração de esforço de intervalo ocupado.
 - Editor de horários por dia de trabalho/folga, frequência e exceção, com prévia semanal e aviso claro de conflito antes de salvar.
-- CRUD de missões e recompensas: criar, arquivar e editar, preservando nomes/valores históricos. Cuidados essenciais exigem manutenção ou delegação explícita, não desaparecem no modo difícil.
+- Backlog posterior à fatia atual: CRUD de missões e recompensas para criar/arquivar, preservando nomes/valores históricos. A edição já existente continua; cuidados essenciais exigem manutenção ou delegação explícita, não desaparecem no modo difícil.
 - Loja mostra saldo que falta, janela possível e limite antes de abrir a compra. Confirmar consumo ou oferecer correção consistente do estado “utilizada”.
 
 **Critérios de pronto:** fluxos principais completos só com teclado; leitor de tela identifica diálogos e estados; nenhuma rolagem horizontal em 320–430 px e zoom; edição aparece de forma coerente nas três telas; conflitos e ausência de janela são explicados antes do resgate.
 
 ## Área: sessões, exercícios e academia Python
 
-- **Implementado na entrega em fechamento:** sessões de estudo, fases e projetos têm ações separadas. É possível somar duas horas sem concluir fase, continuar projeto por vários dias e estudar depois da fase 120. Exercícios têm contagem declarada por sessão; o registro individual de exercícios continua no backlog.
+- **Entregue na versão 1.1.0 publicada:** sessões de estudo, fases e projetos têm ações separadas. É possível somar duas horas sem concluir fase, continuar projeto por vários dias e estudar depois da fase 120. Exercícios têm contagem declarada por sessão; o registro individual de exercícios continua no backlog.
 - **Compatibilidade implementada:** novos progressos usam v2; v1 abre sem regravação e pode ser ativado por prévia com cópia recuperável. Os pontos históricos entram no teto do mesmo dia, sem inventar minutos ou sessões.
 - **Pontuação implementada:** soma diária, orçamento congelado no primeiro registro, mínima de 5 min/5 XP/2 moedas e teto padrão de 120 min/120 XP/36 moedas. Marco de fase ou projeto não paga novamente. Correções mantêm histórico e independência entre prática e marcos.
 - Sessões diárias com objetivos claros: revisão, conteúdo, exercícios de base, variações e registro. Manter meta de 120 minutos editável e pausa fora da contagem de estudo.
@@ -136,8 +140,8 @@ Somente quando a necessidade de usar celular e computador estiver confirmada e o
 ## Ordem prática para os próximos ciclos
 
 1. R0a/R0b/R0c: base de confiabilidade entregue; manter os testes e limites documentados.
-2. Finalizar as verificações e publicar a entrega de sessões de Python independentes.
-3. Melhorar Hoje e unificar a agenda.
+2. Sessões de Python independentes: versão 1.1.0 entregue, validada e publicada; manter as regressões.
+3. Melhorar Hoje e unificar a agenda: versão 1.2.0 implementada e validada; conferir o fechamento de distribuição e publicação no relatório.
 4. Aprofundar as primeiras sete fases de Python, validando um piloto de conteúdo.
 5. Enriquecer avatar, refúgio e loja.
 6. Adicionar revisão semanal acolhedora, com opção de manter tudo igual.
