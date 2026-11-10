@@ -1,6 +1,6 @@
 # Roadmap de evolução — Entre Trilhas
 
-> Atualização de 10/11/2026: sessões de Python independentes (1.1.0), Hoje/agenda (1.2.0) e o piloto de conteúdo Python 1–7 (1.3.0) estão entregues, validados e publicados. Código do piloto em [5f89600605cbb4e1aafd423b6aab32b713932bd8](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8); distribuição e limites em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md).
+> Atualização de 10/11/2026: sessões de Python (1.1.0), Hoje/agenda (1.2.0), conteúdo Python 1–7 (1.3.0) e avatar/refúgio/loja (1.4.0) estão entregues, validados e publicados. Código de 1.4.0 em [332d2174f41fc609037166fd17cc4a8f938d48b2](https://github.com/danielfeuser23/vida/commit/332d2174f41fc609037166fd17cc4a8f938d48b2); distribuição e limites em [ENTREGA_AVATAR_REFUGIO_LOJA.md](ENTREGA_AVATAR_REFUGIO_LOJA.md).
 
 Este é um plano de produto e engenharia, não uma lista de recursos já implementados. Revisão em 10/11/2026. Leia `AUDITORIA.md` para resultados e limitações. Aumentar riqueza significa primeiro aumentar confiança e utilidade; quantidade de telas não é uma métrica de sucesso.
 
@@ -18,9 +18,9 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 
 **Entrega concluída e publicada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0.
 
-**Aprofundar as primeiras sete fases de Python — concluído, validado e publicado**, versão 1.3.0. Conteúdo para iniciantes, dicas/soluções recolhidas e testes locais, mantendo sessões e contadores independentes. Foram aprovados 208 testes Node, 25 testes de conteúdo/128 execuções Python e as suítes de navegador. Distribuição e publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog; não avançar para outra entrega neste ciclo.
+**Aprofundar as primeiras sete fases de Python — concluído, validado e publicado**, versão 1.3.0. Conteúdo para iniciantes, dicas/soluções recolhidas e testes locais, mantendo sessões e contadores independentes. Foram aprovados 208 testes Node, 25 testes de conteúdo/128 execuções Python e as suítes de navegador. Distribuição e publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Esse ciclo foi encerrado antes de iniciar avatar/refúgio; finanças, novas fases, PWA e sincronização continuam planejadas.
 
-**Avatar, refúgio e loja — concluído e validado**, versão 1.4.0. Avatar autoral, personalização opcional, coleção por marcos e três objetos do refúgio, separados dos extras pessoais. A evolução usa evidências ativas, sem perda por ausência ou novo pagamento. Passaram 243 testes Node, as suítes de navegador e a cópia extraída. Distribuição e publicação em [ENTREGA_AVATAR_REFUGIO_LOJA.md](ENTREGA_AVATAR_REFUGIO_LOJA.md). A autorização de “próxima etapa” abrange este ciclo; não iniciar revisão semanal ampliada ou finanças automaticamente.
+**Avatar, refúgio e loja — concluído, validado e publicado**, versão 1.4.0. Avatar autoral, personalização opcional, coleção por marcos e três objetos do refúgio, separados dos extras pessoais. A evolução usa evidências ativas, sem perda por ausência ou novo pagamento. Passaram 243 testes Node, as suítes de navegador e a cópia extraída. Distribuição e publicação em [ENTREGA_AVATAR_REFUGIO_LOJA.md](ENTREGA_AVATAR_REFUGIO_LOJA.md). A autorização de “próxima etapa” abrange este ciclo; não iniciar revisão semanal ampliada ou finanças automaticamente.
 
 ## Sequência vigente solicitada
 

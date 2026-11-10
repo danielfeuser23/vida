@@ -6,7 +6,7 @@ A versão **1.1.0**, com sessões de Python independentes, foi [publicada no Git
 
 A entrega **1.3.0 — Primeiras sete fases de Python** aprofunda o começo da trilha para iniciantes. Foi validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8), sem deploy. Testes, fontes e limites em [ENTREGA_PYTHON_1_7.md](auditoria/ENTREGA_PYTHON_1_7.md).
 
-A entrega **1.4.0 — Avatar, refúgio e loja** acrescenta personalização e cosméticos por marcos, sem novas despesas de moedas. Estado e testes em [ENTREGA_AVATAR_REFUGIO_LOJA.md](auditoria/ENTREGA_AVATAR_REFUGIO_LOJA.md).
+A entrega **1.4.0 — Avatar, refúgio e loja** acrescenta personalização e cosméticos por marcos, sem novas despesas de moedas. Foi validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/332d2174f41fc609037166fd17cc4a8f938d48b2), sem deploy. Testes e limites em [ENTREGA_AVATAR_REFUGIO_LOJA.md](auditoria/ENTREGA_AVATAR_REFUGIO_LOJA.md).
 
 ## Abrir e usar
 

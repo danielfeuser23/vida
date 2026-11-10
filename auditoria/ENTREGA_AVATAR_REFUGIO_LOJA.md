@@ -2,7 +2,7 @@
 
 **10/11/2026 · America/Sao_Paulo · aplicação 1.4.0.**
 
-**Entrega concluída e validada localmente; envio ao GitHub em preparação.** A publicação só será registrada após confirmação. Sem deploy e sem início de revisão semanal ampliada, finanças ou outras entregas.
+**Entrega concluída, validada e publicada no GitHub.** Código em `main`, commit [332d2174f41fc609037166fd17cc4a8f938d48b2](https://github.com/danielfeuser23/vida/commit/332d2174f41fc609037166fd17cc4a8f938d48b2). Push normal e referência remota confirmados. Este registro final e os pacotes documentais acompanham fechamento posterior, sem alterar o código validado. Sem deploy e sem início de revisão semanal ampliada, finanças ou outras entregas.
 
 ## Base e escopo
 
@@ -81,7 +81,7 @@ O novo perfil substitui os vários títulos `h1` antigos por uma hierarquia de t
 | Navegador novo | **10 testes / 26 contextos ou perfis aprovados**, fonte e HTML único, após a correção de foco. Inclui v1/v2, prévia/cancelamento, bloqueios, idempotência, backup/recuperação, reabertura, ausência/correção, quota, consumo e cancelamento concorrente, teclado, 320/430 px e zoom nativo de 200%. Capturas desktop/móveis/zoom inspecionadas. |
 | Navegador anterior | Smoke aprovado na fonte e HTML único; integridade **14/36**, abertura **7/32**, sessões **14/32** em rodadas 13 + 1 após o ajuste de seletor, acessibilidade **16/44**, zoom nativo **6/12**, agenda **17/36** e conteúdo **7/20** aprovados (testes/contextos ou perfis). No smoke do HTML único mudou apenas a URL em cópia temporária, mantendo todas as asserções. |
 | Build, HTML único e pacotes extraídos | Aprovados: build determinístico, script do bundle sintaticamente válido; CRC e bytes de todos os arquivos conferidos. ZIP do aplicativo com 60 arquivos e auditoria com 18. Na cópia extraída, sintaxe, **243 testes Node, 25 testes Python/128 execuções e build** passaram. Quatro testes/dez contextos de navegador passaram nos dois artefatos, incluindo aparência, v1/v2, restauração, correção, quota, compra/cancelamento e consumo confirmado. Documentação final reempacotada antes do commit. |
-| GitHub | Pendente de validação e confirmação do envio |
+| GitHub | Publicação confirmada em `main`: [332d2174f41fc609037166fd17cc4a8f938d48b2](https://github.com/danielfeuser23/vida/commit/332d2174f41fc609037166fd17cc4a8f938d48b2), descendente de `efb9b1b`. O push e `git ls-remote` retornaram o mesmo identificador, sem force push ou deploy. |
 
 Comandos: `npm run check`, `npm test`, `npm run test:content`, `npm run build`; com `npm start` ativo, `python3 tests/browser_refuge.py` e as suítes anteriores de smoke, integridade, abertura, sessões, acessibilidade, zoom nativo, agenda e conteúdo.
 
