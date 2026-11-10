@@ -2,7 +2,7 @@
 
 Uma proposta editável de rotina com identidade própria de RPG acolhedor: você é um **Guardião do Cotidiano**, que constrói seu acampamento com pequenas ações. O personagem cresce com a prática registrada, sem perder níveis por faltas.
 
-Atualização de 09/11/2026: sessões de Python independentes foram validadas e [publicadas na versão 1.1.0](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A rotina abaixo continua uma proposta editável. A entrega separada [Hoje e agenda unificada](auditoria/ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada e passou na validação funcional; o fechamento de distribuição e publicação está no relatório.
+Atualização de 09/11/2026: sessões de Python independentes foram validadas e [publicadas na versão 1.1.0](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A rotina abaixo continua uma proposta editável. A entrega separada [Hoje e agenda unificada](auditoria/ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada, validada e publicada; os resultados de distribuição e GitHub estão no relatório.
 
 ## Premissas confirmadas e propostas
 

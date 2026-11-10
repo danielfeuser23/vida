@@ -1,6 +1,6 @@
 # Prompt para continuar — sessões de Python independentes
 
-> Registro histórico do escopo. Em 09/11/2026, sessões foram concluídas, validadas e publicadas em 1.1.0; veja [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md). A solicitação mais recente autorizou revisar, corrigir e publicar a versão validada no GitHub e, depois, executar Hoje/agenda em ciclo separado, agora implementado e validado, com resultados no relatório de Hoje/agenda. As restrições de publicação/continuidade no prompt original abaixo descrevem aquela etapa anterior.
+> Registro histórico do escopo. Em 09/11/2026, sessões foram concluídas, validadas e publicadas em 1.1.0; veja [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md). A solicitação mais recente autorizou revisar, corrigir e publicar a versão validada no GitHub e, depois, executar Hoje/agenda em ciclo separado, agora concluído, validado e publicado, com resultados no relatório de Hoje/agenda. As restrições de publicação/continuidade no prompt original abaixo descrevem aquela etapa anterior.
 
 Preparado em 06/11/2026. A área de finanças pessoais foi incluída no roadmap como melhoria futura; este prompt continua a próxima entrega já recomendada após R0c. Copie o texto abaixo:
 

@@ -2,7 +2,7 @@
 
 Um RPG de rotina em português, responsivo e sem dependências de instalação. Feito com HTML, CSS e JavaScript; Python é a trilha de aprendizado, não um requisito para usar o app. Node.js 22 ou superior permite executar servidor, gerar o arquivo único e rodar os testes.
 
-A versão **1.1.0**, com sessões de Python independentes, foi [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A versão **1.2.0 — Hoje e agenda unificada** está implementada e validada; pacote e envio final estão sendo conferidos no [relatório da entrega](auditoria/ENTREGA_HOJE_AGENDA.md). Não houve deploy do aplicativo.
+A versão **1.1.0**, com sessões de Python independentes, foi [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A versão **1.2.0 — Hoje e agenda unificada** foi implementada, validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/1d2aa88f288a8b979a40d61e1f0b486a040d695d). Veja testes, pacotes e limites no [relatório da entrega](auditoria/ENTREGA_HOJE_AGENDA.md). Não houve deploy do aplicativo.
 
 ## Abrir e usar
 

@@ -2,7 +2,7 @@
 
 **Revisão iniciada em 09/11/2026 · America/Sao_Paulo · aplicação 1.2.0.**
 
-**Implementação e validação funcional concluídas.** Os resultados confirmados estão abaixo; pacote extraído e envio ao GitHub são registrados separadamente. Não houve deploy.
+**Entrega concluída, validada e publicada no GitHub.** Os pacotes e a cópia extraída foram conferidos. Não houve deploy do aplicativo.
 
 ## Base e autorização
 
@@ -96,9 +96,9 @@ O último caso reproduziu perda de foco no grupo de concluídas quando outra aba
 | `python3 tests/browser_agenda.py` | **17 cenários/36 contextos aprovados em rodadas 16 + 1**, aplicação normal e HTML único; último cenário de foco repetido depois da correção. |
 | Suítes anteriores de navegador | Smoke aprovado; integridade **14/36**, abertura **7/32**, sessões **14/32**, acessibilidade **16/44** e zoom nativo **6/12** aprovados (testes/contextos ou perfis). Após os IDs finais, dois cenários de teclado/quatro contextos passaram novamente. |
 | ZIP extraído | Aprovado: módulo agenda.js incluído, CRC e conteúdo comparados com as fontes; sintaxe, 197 testes Node e build passaram na cópia extraída. Quatro testes de navegador/oito contextos passaram nos dois artefatos (Python, passeios/backup, compra/estorno e prévia/recusa de conflito). |
-| Publicação 1.2.0 | PENDENTE — não confundir com o commit publicado de 1.1.0. |
+| Publicação 1.2.0 | Confirmada em `main`: [1d2aa88f288a8b979a40d61e1f0b486a040d695d](https://github.com/danielfeuser23/vida/commit/1d2aa88f288a8b979a40d61e1f0b486a040d695d). Histórico preservado, sem force push ou deploy. Este registro e os pacotes documentais acompanham o fechamento posterior, sem alterar o código validado. |
 
-Todas as verificações devem usar dados fictícios e contextos/perfis isolados, sem abrir o progresso pessoal do usuário.
+As verificações usaram dados fictícios e contextos/perfis isolados, sem abrir ou sobrescrever o progresso pessoal do usuário.
 
 Algumas tentativas iniciais foram impedidas por limite de uso da revisão automática ou por SIGTRAP/EPERM no contexto restrito; outra rodada encontrou o servidor encerrado após a retomada. Esses resultados de infraestrutura não foram tratados como bugs do produto nem aprovações. As rodadas válidas usaram o servidor reiniciado, com HTTP 200 confirmado, sem contornar restrições.
 

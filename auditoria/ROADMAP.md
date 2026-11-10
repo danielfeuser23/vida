@@ -1,6 +1,6 @@
 # Roadmap de evolução — Entre Trilhas
 
-> Atualização de 09/11/2026: sessões de Python independentes foram concluídas, validadas e publicadas em `main` no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A entrega separada [Hoje e agenda unificada](ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada e validada; distribuição/publicação estão sendo encerradas no relatório.
+> Atualização de 09/11/2026: sessões de Python independentes foram concluídas, validadas e publicadas em `main` no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A entrega separada [Hoje e agenda unificada](ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada, validada e publicada; distribuição e referências estão no relatório.
 
 Este é um plano de produto e engenharia, não uma lista de recursos já implementados. Revisão em 09/11/2026. Leia `AUDITORIA.md` para resultados e limitações. Aumentar riqueza significa primeiro aumentar confiança e utilidade; quantidade de telas não é uma métrica de sucesso.
 
@@ -16,7 +16,7 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 
 **Sessões de Python independentes — entregues e publicadas:** B05 resolvido, com registro de duração, fases/projetos sem novo pagamento e migração recuperável v1→v2. A prática depois da fase 120 passou nos testes. A versão 1.1.0 teve 155 testes Node e, no navegador, smoke, integridade, abertura, sessões, acessibilidade e zoom nativo aprovados. O pacote foi conferido na cópia extraída; a publicação foi confirmada no commit ligado acima. Consulte [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md).
 
-**Entrega implementada e validada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0. A autorização atual abrange esse ciclo, sem avançar além dele. Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog.
+**Entrega concluída e publicada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0. A autorização atual abrange esse ciclo, sem avançar além dele. Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog.
 
 ## Sequência vigente solicitada
 
@@ -24,7 +24,7 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 |---:|---|---|
 | 1 | **Concluir a confiabilidade — entregue** | R0a/R0b/R0c verificadas, com limites de ambiente e acessibilidade documentados. Manter regressões nas entregas seguintes. |
 | 2 | **Separar sessões de Python da conclusão de fases — entregue** | Versão 1.1.0 validada e publicada: várias sessões/dia, revisão após fase 120, fases/projetos independentes e pontuação única até o teto. |
-| 3 | **Melhorar Hoje e unificar a agenda — validada** | Modelo único de blocos, próxima ação pelo horário, consulta por data, prévia semanal/conflitos e disponibilidade da Loja; 197 testes Node, novas regressões de agenda e suítes anteriores aprovados; distribuição/publicação no relatório. |
+| 3 | **Melhorar Hoje e unificar a agenda — entregue** | Modelo único de blocos, próxima ação pelo horário, consulta por data, prévia semanal/conflitos e disponibilidade da Loja; 197 testes Node, novas regressões de agenda e suítes anteriores aprovados; pacotes e publicação confirmados no relatório. |
 | 4 | **Aprofundar as primeiras sete fases de Python** | Exercícios/sessões separados. Exemplos, pistas e testes locais autorais conferidos antes de expandir o catálogo. |
 | 5 | **Enriquecer avatar, refúgio e loja** | Economia estável. Identidade própria, cosméticos por marcos, extras que cabem no tempo, poucos cliques. |
 | 6 | **Adicionar revisão semanal acolhedora** | Totais confiáveis e rotina integrada. Manter ou ajustar sem metas automáticas ou punições. |
@@ -141,7 +141,7 @@ Somente quando a necessidade de usar celular e computador estiver confirmada e o
 
 1. R0a/R0b/R0c: base de confiabilidade entregue; manter os testes e limites documentados.
 2. Sessões de Python independentes: versão 1.1.0 entregue, validada e publicada; manter as regressões.
-3. Melhorar Hoje e unificar a agenda: versão 1.2.0 implementada e validada; conferir o fechamento de distribuição e publicação no relatório.
+3. Melhorar Hoje e unificar a agenda: versão 1.2.0 implementada e validada; pacotes e publicação confirmados no relatório.
 4. Aprofundar as primeiras sete fases de Python, validando um piloto de conteúdo.
 5. Enriquecer avatar, refúgio e loja.
 6. Adicionar revisão semanal acolhedora, com opção de manter tudo igual.
