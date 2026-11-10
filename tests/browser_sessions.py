@@ -183,7 +183,7 @@ class BrowserSessions(unittest.TestCase):
                 self.assertEqual(self.state()["lessons"],[])
                 self.nav("character")
                 practice=self.page.locator(".panel").filter(has=self.page.get_by_role("heading",name="Prática que fica",exact=True))
-                expect(practice.locator(".stats > div").nth(1).locator("h1")).to_have_text("1")
+                expect(practice.locator('[data-stat="projects"]')).to_have_text("1")
                 expect(practice.locator(".stats > div").nth(1).locator("p")).to_have_text("projetos concluídos")
                 self.nav("python")
                 expect(self.page.locator(f'[data-action="complete-project"][data-id="{pid}"]')).to_have_count(0)
@@ -197,7 +197,7 @@ class BrowserSessions(unittest.TestCase):
                 self.assertEqual(sum(a["exercises"] for a in self.sessions()),3)
                 self.nav("character")
                 practice=self.page.locator(".panel").filter(has=self.page.get_by_role("heading",name="Prática que fica",exact=True))
-                expect(practice.locator(".stats > div").nth(1).locator("h1")).to_have_text("0")
+                expect(practice.locator('[data-stat="projects"]')).to_have_text("0")
                 self.no_errors()
 
     def test_full_legacy_roadmap_migrates_then_records_review_without_invented_minutes(self):

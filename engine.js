@@ -2,6 +2,7 @@ import {defaultMissions,defaultRewards} from './data.js';
 import {createId} from './ids.js';
 import {roadmap} from './roadmap.js';
 import * as A from './agenda.js';
+import * as R from './refuge.js';
 export const TIMEZONE='America/Sao_Paulo';
 export const dayKey=(now=new Date())=>new Intl.DateTimeFormat('sv-SE',{timeZone:TIMEZONE,year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
 export const weekday=day=>new Date(day+'T12:00:00Z').getUTCDay();
@@ -209,7 +210,8 @@ export function validateState(s){
  try{
   jsonStable(s);
   shape(s,['version','revision','created','config','records','events','purchases','lessons','overrides','difficult',...(s.version===2?['study']:[])]);
-  shape(s.config,['name','xpStep','paused','sounds','missions','rewards']);
+  shape(s.config,['name','xpStep','paused','sounds','missions','rewards'],['appearance']);
+  if(own(s.config,'appearance'))R.validateAppearance(s.config.appearance);
   requireValid([1,2].includes(s.version)&&int(s.revision)&&dateValid(s.created)&&text(s.config.name)&&int(s.config.xpStep,10000)&&s.config.xpStep>=10&&typeof s.config.paused==='boolean'&&typeof s.config.sounds==='boolean');
   requireValid(Array.isArray(s.config.missions)&&s.config.missions.length>=1&&s.config.missions.length<=100&&Array.isArray(s.config.rewards)&&s.config.rewards.length<=100);
   const missionIds=new Set(),rewardIds=new Set();
@@ -339,6 +341,33 @@ export function migrateStudyState(state){
  return next;
 }
 export function createStudyState(day=dayKey()){return migrateStudyState(createState(day));}
+
+// Cosmetic availability uses active evidence only. Saved choices are preferences,
+// not financial purchases or claims of ownership; correction can change the view
+// without making an otherwise valid backup invalid.
+function refugeStudy(s){return {sessions:studySessions(s),projects:studyProjects(s).filter(project=>project.completed!==null).length};}
+export function refugeProgress(s){return R.refugeProgress(s,refugeStudy(s));}
+export function appearanceFor(s){return R.appearanceFor(s,refugeStudy(s));}
+export function updateAppearance(s,values){
+ validateState(s);
+ R.validateAppearance(values);
+ const progress=refugeProgress(s),preferred=appearanceFor(s).preferred;
+ const chosen=structuredClone(values);
+ chosen.decor=R.appearanceOptions.decor.map(item=>item.id).filter(id=>chosen.decor.includes(id));
+ const selected=[chosen.accessory,...chosen.decor];
+ for(const id of selected){
+  const item=progress.items.find(item=>item.id===id);
+  const previous=item.slot==='accessory'?preferred.accessory===id:preferred.decor.includes(id);
+  if(!item.unlocked&&!previous)throw Error(item.title+' ainda não está disponível. Marco: '+item.requirement);
+ }
+ if(['cloak','skin','hair','accessory','simplified'].every(field=>chosen[field]===preferred[field])&&
+    chosen.decor.length===preferred.decor.length&&chosen.decor.every(id=>preferred.decor.includes(id)))return false;
+ const next=structuredClone(s);
+ next.config.appearance=chosen;
+ validateState(next);
+ s.config.appearance=chosen;
+ return true;
+}
 
 function studyBudget(s){
  const m=s.config.missions.find(item=>item.id==='python');

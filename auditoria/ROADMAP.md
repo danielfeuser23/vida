@@ -20,6 +20,8 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 
 **Aprofundar as primeiras sete fases de Python — concluído, validado e publicado**, versão 1.3.0. Conteúdo para iniciantes, dicas/soluções recolhidas e testes locais, mantendo sessões e contadores independentes. Foram aprovados 208 testes Node, 25 testes de conteúdo/128 execuções Python e as suítes de navegador. Distribuição e publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog; não avançar para outra entrega neste ciclo.
 
+**Avatar, refúgio e loja — concluído e validado**, versão 1.4.0. Avatar autoral, personalização opcional, coleção por marcos e três objetos do refúgio, separados dos extras pessoais. A evolução usa evidências ativas, sem perda por ausência ou novo pagamento. Passaram 243 testes Node, as suítes de navegador e a cópia extraída. Distribuição e publicação em [ENTREGA_AVATAR_REFUGIO_LOJA.md](ENTREGA_AVATAR_REFUGIO_LOJA.md). A autorização de “próxima etapa” abrange este ciclo; não iniciar revisão semanal ampliada ou finanças automaticamente.
+
 ## Sequência vigente solicitada
 
 | Ordem | Entrega | Dependência e aceite principal |
@@ -28,11 +30,11 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 | 2 | **Separar sessões de Python da conclusão de fases — entregue** | Versão 1.1.0 validada e publicada: várias sessões/dia, revisão após fase 120, fases/projetos independentes e pontuação única até o teto. |
 | 3 | **Melhorar Hoje e unificar a agenda — entregue** | Modelo único de blocos, próxima ação pelo horário, consulta por data, prévia semanal/conflitos e disponibilidade da Loja; 197 testes Node, novas regressões de agenda e suítes anteriores aprovados; pacotes e publicação confirmados no relatório. |
 | 4 | **Aprofundar as primeiras sete fases de Python — entregue 1.3.0** | Sete exemplos, 28 exercícios básicos e 42 extras opcionais, dicas progressivas, soluções comentadas e preparo separado. Execução/saídas/bordas, leitura no navegador, contabilidade e cópia extraída verificados; resultados e publicação no relatório. |
-| 5 | **Enriquecer avatar, refúgio e loja** | Economia estável. Identidade própria, cosméticos por marcos, extras que cabem no tempo, poucos cliques. |
+| 5 | **Enriquecer avatar, refúgio e loja — entregue 1.4.0** | Avatar personalizável, quatro acessórios e três objetos por marcos, sem gastar moedas; preferências v1/v2 validadas e visual básico após correções. Teclado/celular, loja, backups, economia e cópia extraída verificados; resultados e publicação no relatório. |
 | 6 | **Adicionar revisão semanal acolhedora** | Totais confiáveis e rotina integrada. Manter ou ajustar sem metas automáticas ou punições. |
 | 7 | **Finanças pessoais — melhoria solicitada em 06/11/2026** | Entregas F1–F3 abaixo: gastos mensais, quanto foi guardado e investimentos. Dinheiro real separado da economia do RPG. Ainda não implementado. |
 
-As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de implementação é a sequência acima. A posição de finanças após as seis entregas anteriores é uma proposta editável; a implementação atual é o piloto de conteúdo Python 1–7. Persistência avançada, offline e sincronização ficam no backlog posterior. Porte e prazos precisam ser avaliados em cada etapa; não são compromissos de calendário.
+As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de implementação é a sequência acima. A posição de finanças após as seis entregas anteriores é uma proposta editável; a implementação atual é avatar, refúgio e loja. Persistência avançada, offline e sincronização ficam no backlog posterior. Porte e prazos precisam ser avaliados em cada etapa; não são compromissos de calendário.
 
 ## Confiabilidade — progresso e pendências
 
@@ -79,6 +81,8 @@ As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de 
 **Critérios de pronto:** sessão pode ser registrada sem liberar fase; mínimos não fingem cumprir duas horas; exercício não pontua duas vezes; projetos não são somados repetidamente; há revisão depois da trilha; primeira semana tem exemplos e critérios testados, com expansão gradual para os demais mundos.
 
 ## Área: avatar, refúgio e loja
+
+**Fatia 1.4.0 concluída e validada:** arte SVG autoral, cores/pele/cabelo livres, quatro acessórios e três objetos derivados de prática/projetos, coleção separada de resgates, visual simples, saldo após reserva e confirmação de consumo. O único dado novo é a preferência opcional `config.appearance`; abrir backups antigos não a grava. Ausência não remove itens; correções recalculam critérios e aplicam visual básico sem invalidar o backup. Não há compra de cosméticos, crafting ou inventário consumível.
 
 - Avatar ilustrado personalizável, com cores, acessórios e itens conquistados. Desenvolver identidade visual original, mantendo tipografia legível e paleta natural.
 - Refúgio que muda com marcos significativos: biblioteca, bancada de Python e espaço do companheiro. Preferir pequenas mudanças visuais a uma tela cheia de barras.
@@ -146,10 +150,10 @@ Somente quando a necessidade de usar celular e computador estiver confirmada e o
 2. Sessões de Python independentes: versão 1.1.0 entregue, validada e publicada; manter as regressões.
 3. Melhorar Hoje e unificar a agenda: versão 1.2.0 implementada e validada; pacotes e publicação confirmados no relatório.
 4. Concluir e validar o piloto das primeiras sete fases de Python; ver relatório 1.3.0 para resultados e publicação.
-5. Próxima entrega recomendada após esse piloto: enriquecer avatar, refúgio e loja. Não iniciada neste ciclo.
-6. Adicionar revisão semanal acolhedora, com opção de manter tudo igual.
+5. Avatar, refúgio e loja: versão 1.4.0 entregue e validada; testes, documentação, pacotes e estado da publicação no relatório.
+6. Próxima entrega recomendada após esse ciclo: revisão semanal acolhedora, com opção de manter tudo igual. Não iniciada automaticamente.
 7. Finanças pessoais, em entregas F1–F3: gastos mensais, valores guardados/metas e investimentos manuais. Posição sugerida no backlog; não iniciar junto com a próxima entrega.
 
-Depois dessas entregas, avaliar histórico escalável/offline e sincronização conforme medidas e necessidade real. Cada entrega termina com evidências de testes, limitações e critérios de aceite; build aprovado sozinho não encerra uma etapa. A autorização mais recente permite concluir, validar e publicar somente o aprofundamento das fases 1–7. Não iniciar a entrega seguinte automaticamente.
+Depois dessas entregas, avaliar histórico escalável/offline e sincronização conforme medidas e necessidade real. Cada entrega termina com evidências de testes, limitações e critérios de aceite; build aprovado sozinho não encerra uma etapa. Após a publicação do piloto Python, a solicitação “Vamos para a próxima etapa” autorizou o ciclo de avatar, refúgio e loja. Não iniciar a entrega seguinte automaticamente.
 
 Escopo original da entrega de sessões: [PROMPT_SESSOES_PYTHON.md](PROMPT_SESSOES_PYTHON.md). Ele é um registro histórico; a autorização atual de revisão/publicação e continuidade está refletida no status acima.

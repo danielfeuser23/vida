@@ -6,6 +6,8 @@ A versão **1.1.0**, com sessões de Python independentes, foi [publicada no Git
 
 A entrega **1.3.0 — Primeiras sete fases de Python** aprofunda o começo da trilha para iniciantes. Foi validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/5f89600605cbb4e1aafd423b6aab32b713932bd8), sem deploy. Testes, fontes e limites em [ENTREGA_PYTHON_1_7.md](auditoria/ENTREGA_PYTHON_1_7.md).
 
+A entrega **1.4.0 — Avatar, refúgio e loja** acrescenta personalização e cosméticos por marcos, sem novas despesas de moedas. Estado e testes em [ENTREGA_AVATAR_REFUGIO_LOJA.md](auditoria/ENTREGA_AVATAR_REFUGIO_LOJA.md).
+
 ## Abrir e usar
 
 Na pasta do projeto:
@@ -183,6 +185,31 @@ A versão 1.2.0 usa um modelo único para Hoje, **Ver agenda** e disponibilidade
 A janela do dia continua 05:30–22:30. Os blocos reservados de trabalho, refeições, preparação, higiene, lazer básico e desaceleração vêm da proposta do PLANO e ainda não possuem editor completo. Esta fatia não cria/arquiva missões ou recompensas e não implementa calendário pessoal arbitrário.
 
 O campo opcional do segundo passeio (`secondTime`) é uma extensão aceita pela versão atual em backups v1/v2; versões anteriores, inclusive 1.1.0, podem recusá-lo. Abrir dados existentes não muda automaticamente seu formato nem suas preferências. A contabilidade de sessões, fases e pontos permanece a da entrega 1.1.0.
+
+## Avatar, refúgio e coleção
+
+Em **Personagem → Personalizar**, escolha roupa, tom de pele, cabelo, acessório e os objetos do refúgio. A prévia não grava: use **Salvar aparência** para confirmar ou cancele. O **visual simples** reduz os detalhes da ilustração; não muda recompensas ou marcos. Os desenhos são SVGs autorais, sem serviços externos, e não têm animações novas.
+
+A coleção é separada das recompensas pessoais: não custa moedas, não ocupa agenda e não concede XP. Cores, pele, cabelo e o avatar básico ficam livres desde o começo. Marcos liberam quatro acessórios e três objetos, automaticamente:
+
+| Item | Marco de prática registrada |
+|---|---|
+| Broche de folha | Uma missão ou sessão de estudo |
+| Lenço dos caminhos | Três dias em uma mesma semana, sem sequência obrigatória |
+| Estrela de criação e luminária | Um projeto de Python concluído |
+| Amuleto de retorno | Retomar após pelo menos um dia sem registro |
+| Livros da jornada | Leitura em três dias distintos |
+| Manta do companheiro | Cuidados do cachorro em três dias distintos |
+
+O refúgio tem uma biblioteca, uma bancada de estudo e o espaço do companheiro. Seus três objetos aparecem quando o marco está disponível e a preferência de exibição está ligada. As preferências iniciais permitem que apareçam ao alcançar os marcos; não é preciso comprar ou resgatar. O cachorro ilustrado permanece presente e **não comprova cuidados reais**.
+
+Faltar e pausar não apagam a prática já registrada nem fazem os itens sumirem. Corrigir um registro ou reabrir um projeto pode mudar seu marco: o app usa o visual básico para um acessório indisponível e oculta o objeto correspondente, mantendo sua preferência guardada e o backup válido. Isso corrige a evidência informada; não é punição por ausência.
+
+Na Loja, extras pessoais continuam custando moedas e exigindo horário livre. A reserva informa saldo restante, e marcar como utilizada pede confirmação. Uma reserva utilizada não pode ser cancelada; confira antes de confirmar o consumo. Descanso, alimentação, lazer básico e cuidados essenciais continuam independentes do saldo.
+
+**Compatibilidade:** abrir um backup antigo v1/v2 não adiciona preferências nem o regrava. Salvar uma aparência diferente acrescenta somente `config.appearance`, uma extensão opcional validada, sem migração de formato ou alteração de histórico. Backups com esse campo precisam da versão **1.4.0 ou posterior**: versões antigas podem recusá-los. A recuperação anterior e a ativação v1→v2 preservam a preferência. Dados continuam locais ao navegador/perfil/origem; exporte seu backup.
+
+Com o servidor iniciado, a suíte desta entrega é `python3 tests/browser_refuge.py`. O relatório registra ambientes efetivamente testados e limitações.
 
 ## Melhoria planejada: finanças pessoais
 

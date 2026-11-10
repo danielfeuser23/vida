@@ -100,6 +100,8 @@ Nas folgas os passeios substituem os trajetos em uma missão diária combinada d
 
 ## Personagem e economia
 
+A entrega 1.4.0 acrescenta uma coleção cosmética por marcos: primeiro registro, três dias de uma mesma semana, retomada, leitura/cuidado em três dias e projeto concluído. São quatro acessórios e três objetos do refúgio, sem gastar moedas nem pontuar novamente. Cores, pele e cabelo são livres. A coleção não ocupa agenda nem substitui cuidados reais; os extras da loja continuam separados. Faltar preserva os marcos históricos; corrigir evidências recalcula a disponibilidade, sem invalidar o progresso. As regras e testes estão em [ENTREGA_AVATAR_REFUGIO_LOJA.md](auditoria/ENTREGA_AVATAR_REFUGIO_LOJA.md).
+
 - **XP** é prática acumulada. Não é dinheiro e não é consumido na loja.
 - **Moedas** são saldo disponível: recebimentos menos compras, mais cancelamentos válidos.
 - Nível geral: `1 + piso(XP total / 100)`. Cada habilidade usa a mesma regra com seu XP próprio. Exemplo: 235 XP = nível 3, com 35/100 XP na barra.

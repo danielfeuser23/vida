@@ -1,13 +1,13 @@
 {
   "name": "entre-trilhas",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node server.js",
     "test": "node --test --test-isolation=none tests/*.test.js",
     "test:content": "python3 tests/content_python.py",
-    "check": "node --check app.js && node --check engine.js && node --check agenda.js && node --check ids.js && node --check storage.js && node --check data.js && node --check roadmap.js && node --check python-content.js && node --check build.js",
+    "check": "node --check app.js && node --check engine.js && node --check agenda.js && node --check ids.js && node --check storage.js && node --check data.js && node --check roadmap.js && node --check python-content.js && node --check refuge.js && node --check illustrations.js && node --check build.js",
     "build": "node build.js"
   }
 }
