@@ -1,8 +1,8 @@
 # Roadmap de evolução — Entre Trilhas
 
-> Atualização de 09/11/2026: sessões de Python independentes foram concluídas, validadas e publicadas em `main` no commit [51fecc7e87b906f366791833272fd7c212bd7bbb](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A entrega separada [Hoje e agenda unificada](ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada, validada e publicada; distribuição e referências estão no relatório.
+> Atualização de 10/11/2026: sessões de Python independentes (1.1.0) e Hoje/agenda (1.2.0) estão entregues e publicadas. O piloto de conteúdo Python 1–7, versão 1.3.0, está concluído e validado; distribuição e estado da publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md).
 
-Este é um plano de produto e engenharia, não uma lista de recursos já implementados. Revisão em 09/11/2026. Leia `AUDITORIA.md` para resultados e limitações. Aumentar riqueza significa primeiro aumentar confiança e utilidade; quantidade de telas não é uma métrica de sucesso.
+Este é um plano de produto e engenharia, não uma lista de recursos já implementados. Revisão em 10/11/2026. Leia `AUDITORIA.md` para resultados e limitações. Aumentar riqueza significa primeiro aumentar confiança e utilidade; quantidade de telas não é uma métrica de sucesso.
 
 ## Direção do produto
 
@@ -16,7 +16,9 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 
 **Sessões de Python independentes — entregues e publicadas:** B05 resolvido, com registro de duração, fases/projetos sem novo pagamento e migração recuperável v1→v2. A prática depois da fase 120 passou nos testes. A versão 1.1.0 teve 155 testes Node e, no navegador, smoke, integridade, abertura, sessões, acessibilidade e zoom nativo aprovados. O pacote foi conferido na cópia extraída; a publicação foi confirmada no commit ligado acima. Consulte [ENTREGA_SESSOES_PYTHON.md](ENTREGA_SESSOES_PYTHON.md).
 
-**Entrega concluída e publicada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0. A autorização atual abrange esse ciclo, sem avançar além dele. Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog.
+**Entrega concluída e publicada: melhorar Hoje e unificar a agenda**, iniciada depois da validação e publicação de 1.1.0.
+
+**Aprofundar as primeiras sete fases de Python — concluído e validado**, versão 1.3.0. Conteúdo para iniciantes, dicas/soluções recolhidas e testes locais, mantendo sessões e contadores independentes. Foram aprovados 208 testes Node, 25 testes de conteúdo/128 execuções Python e as suítes de navegador. Distribuição e publicação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Finanças, novas fases, avatar, PWA e sincronização permanecem no backlog; não avançar para outra entrega neste ciclo.
 
 ## Sequência vigente solicitada
 
@@ -25,12 +27,12 @@ R0a, R0b e R0c concluídas e verificadas; consulte [ENTREGA_R0A.md](ENTREGA_R0A.
 | 1 | **Concluir a confiabilidade — entregue** | R0a/R0b/R0c verificadas, com limites de ambiente e acessibilidade documentados. Manter regressões nas entregas seguintes. |
 | 2 | **Separar sessões de Python da conclusão de fases — entregue** | Versão 1.1.0 validada e publicada: várias sessões/dia, revisão após fase 120, fases/projetos independentes e pontuação única até o teto. |
 | 3 | **Melhorar Hoje e unificar a agenda — entregue** | Modelo único de blocos, próxima ação pelo horário, consulta por data, prévia semanal/conflitos e disponibilidade da Loja; 197 testes Node, novas regressões de agenda e suítes anteriores aprovados; pacotes e publicação confirmados no relatório. |
-| 4 | **Aprofundar as primeiras sete fases de Python** | Exercícios/sessões separados. Exemplos, pistas e testes locais autorais conferidos antes de expandir o catálogo. |
+| 4 | **Aprofundar as primeiras sete fases de Python — entregue 1.3.0** | Sete exemplos, 28 exercícios básicos e 42 extras opcionais, dicas progressivas, soluções comentadas e preparo separado. Execução/saídas/bordas, leitura no navegador, contabilidade e cópia extraída verificados; resultados e publicação no relatório. |
 | 5 | **Enriquecer avatar, refúgio e loja** | Economia estável. Identidade própria, cosméticos por marcos, extras que cabem no tempo, poucos cliques. |
 | 6 | **Adicionar revisão semanal acolhedora** | Totais confiáveis e rotina integrada. Manter ou ajustar sem metas automáticas ou punições. |
 | 7 | **Finanças pessoais — melhoria solicitada em 06/11/2026** | Entregas F1–F3 abaixo: gastos mensais, quanto foi guardado e investimentos. Dinheiro real separado da economia do RPG. Ainda não implementado. |
 
-As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de implementação é a sequência acima. A posição de finanças após as seis entregas anteriores é uma proposta editável; a implementação atual é Hoje/agenda, após o fechamento e envio de sessões. Persistência avançada, offline e sincronização ficam no backlog posterior. Porte e prazos precisam ser avaliados em cada etapa; não são compromissos de calendário.
+As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de implementação é a sequência acima. A posição de finanças após as seis entregas anteriores é uma proposta editável; a implementação atual é o piloto de conteúdo Python 1–7. Persistência avançada, offline e sincronização ficam no backlog posterior. Porte e prazos precisam ser avaliados em cada etapa; não são compromissos de calendário.
 
 ## Confiabilidade — progresso e pendências
 
@@ -67,6 +69,7 @@ As áreas detalhadas abaixo conservam o planejamento amplo, mas a prioridade de 
 - Sessões diárias com objetivos claros: revisão, conteúdo, exercícios de base, variações e registro. Manter meta de 120 minutos editável e pausa fora da contagem de estudo.
 - Checklist por exercício com estado, tentativas, observação e evidência opcional. Soma de resolvidos vem desses registros; evitar estimativas automáticas de competência.
 - Ampliar exemplos progressivamente: conceito, exemplo executável, saída esperada, erros comuns, dica em camadas e solução comentada disponível sob demanda.
+- **Fatia 1.3.0:** conteúdo aprofundado apenas das fases 1–7, sem checklist persistido, corretor ou executor. O catálogo guiado não altera contagens antigas: exercícios novos vêm somente do autorregistro nas sessões. As fases 8–120 mantêm o material anterior; expandir seu conteúdo exige uma entrega própria.
 - Oferecer exercícios extras por dificuldade, não apenas mais quantidade. Ligar desafios a hábitos, agenda, pontos, cachorro, casa e gastos fictícios.
 - Revisão espaçada proposta e editável: exercícios marcados como difíceis reaparecem sem impedir a trilha; retomada começa com uma revisão pequena.
 - Projetos com marcos: Diário de pontos → persistência JSON → CLI testada → banco de dados → API → projeto integrador com documentação e testes.
@@ -142,11 +145,11 @@ Somente quando a necessidade de usar celular e computador estiver confirmada e o
 1. R0a/R0b/R0c: base de confiabilidade entregue; manter os testes e limites documentados.
 2. Sessões de Python independentes: versão 1.1.0 entregue, validada e publicada; manter as regressões.
 3. Melhorar Hoje e unificar a agenda: versão 1.2.0 implementada e validada; pacotes e publicação confirmados no relatório.
-4. Aprofundar as primeiras sete fases de Python, validando um piloto de conteúdo.
-5. Enriquecer avatar, refúgio e loja.
+4. Concluir e validar o piloto das primeiras sete fases de Python; ver relatório 1.3.0 para resultados e publicação.
+5. Próxima entrega recomendada após esse piloto: enriquecer avatar, refúgio e loja. Não iniciada neste ciclo.
 6. Adicionar revisão semanal acolhedora, com opção de manter tudo igual.
 7. Finanças pessoais, em entregas F1–F3: gastos mensais, valores guardados/metas e investimentos manuais. Posição sugerida no backlog; não iniciar junto com a próxima entrega.
 
-Depois dessas entregas, avaliar histórico escalável/offline e sincronização conforme medidas e necessidade real. Cada entrega termina com evidências de testes, limitações e critérios de aceite; build aprovado sozinho não encerra uma etapa. A autorização de 09/11/2026 permite executar Hoje/agenda após concluir, validar e publicar sessões. Não avançar além dessa entrega sem nova autorização.
+Depois dessas entregas, avaliar histórico escalável/offline e sincronização conforme medidas e necessidade real. Cada entrega termina com evidências de testes, limitações e critérios de aceite; build aprovado sozinho não encerra uma etapa. A autorização mais recente permite concluir, validar e publicar somente o aprofundamento das fases 1–7. Não iniciar a entrega seguinte automaticamente.
 
 Escopo original da entrega de sessões: [PROMPT_SESSOES_PYTHON.md](PROMPT_SESSOES_PYTHON.md). Ele é um registro histórico; a autorização atual de revisão/publicação e continuidade está refletida no status acima.

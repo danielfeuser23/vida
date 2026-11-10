@@ -1,17 +1,19 @@
 // Trilha editável: 120 fases, com sessões propostas de 120 minutos.
 // Primeiras 28 fases: quatro semanas de fundamentos; desafios são prática sugerida.
 // Uma fase pode precisar de vários dias; tempo ou XP não comprovam domínio técnico.
+// Fases 1–7 têm leitura guiada em python-content.js; practice/exercises legados
+// continuam estáveis para compatibilidade, sem recontar exercícios históricos.
 export const roadmap = [
   {
     "id": 1,
     "world": "01 · Primeiro acampamento",
     "title": "Preparar a mochila",
     "action": "Instalar Python 3 estável, criar uma pasta de estudo e executar jornada.py.",
-    "criterion": "Executar o arquivo no terminal, alterar a mensagem e executá-lo novamente.",
+    "criterion": "Executar jornada.py pelo IDLE ou terminal, alterar a mensagem e executá-lo novamente.",
     "minutes": 120,
     "exercises": 5,
     "project": false,
-    "tip": "Separe editor, arquivo e terminal: escrever não executa o programa. Use Python oficial e confirme python --version, python3 --version ou py --version.",
+    "tip": "Separe o arquivo de código da janela de saída. No IDLE, salve o arquivo e use Run > Run Module; escrever não executa o programa.",
     "code": "print(\"Minha jornada começou!\")",
     "practice": [
       "Confirmar a versão instalada no terminal",

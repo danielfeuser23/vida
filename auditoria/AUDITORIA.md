@@ -1,5 +1,7 @@
 # Auditoria do Entre Trilhas — 05/11/2026
 
+> Ciclo de conteúdo 1.3.0: aprofundamento das fases Python 1–7, sem alteração do formato de progresso ou da economia. Evidências e estado de validação em [ENTREGA_PYTHON_1_7.md](ENTREGA_PYTHON_1_7.md). Os resultados históricos abaixo não são apresentados como uma nova auditoria integral.
+
 > Atualização de 09/11/2026: R0a/R0b/R0c e [sessões de Python independentes](ENTREGA_SESSOES_PYTHON.md) foram entregues; a versão 1.1.0 foi publicada no GitHub. [Hoje e agenda unificada](ENTREGA_HOJE_AGENDA.md), versão 1.2.0, foi implementada, validada e publicada; distribuição e referências estão no relatório. O diagnóstico histórico abaixo foi preservado; não representa a lista atual de pendências.
 
 Revisão histórica da versão 1.0.0 em `/workspace/vida`. O objetivo foi testar a base existente, reproduzir problemas e definir uma evolução verificável. A lógica não foi alterada naquela auditoria; as correções posteriores estão registradas nas entregas. O arquivo único foi regenerado pelo build.

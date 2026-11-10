@@ -4,6 +4,8 @@ Um RPG de rotina em português, responsivo e sem dependências de instalação. 
 
 A versão **1.1.0**, com sessões de Python independentes, foi [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/51fecc7e87b906f366791833272fd7c212bd7bbb). A versão **1.2.0 — Hoje e agenda unificada** foi implementada, validada e [publicada no GitHub](https://github.com/danielfeuser23/vida/commit/1d2aa88f288a8b979a40d61e1f0b486a040d695d). Veja testes, pacotes e limites no [relatório da entrega](auditoria/ENTREGA_HOJE_AGENDA.md). Não houve deploy do aplicativo.
 
+A entrega **1.3.0 — Primeiras sete fases de Python** aprofunda o começo da trilha para iniciantes. Estado de validação, fontes e limites em [ENTREGA_PYTHON_1_7.md](auditoria/ENTREGA_PYTHON_1_7.md).
+
 ## Abrir e usar
 
 Na pasta do projeto:
@@ -46,7 +48,7 @@ Os horários alimentares e as porções do cachorro não foram confirmados. Os b
 - Pausa e reagendamento não criam dívida. Cuidados essenciais não são adiados: ajuste horários e combine ajuda real.
 - Cronômetro opcional usa tempo decorrido, não conclui missões automaticamente e não persiste após fechar/recarregar. Sons discretos são opcionais e desligados por padrão.
 - Não há execução/correção automática de Python, bloqueio de apps, lembretes push, pagamentos reais, edição de toda a grade fixa ou compartilhamento familiar nesta versão.
-- O mapa tem 120 fases e 600 desafios, de fundamentos a temas avançados. Não é certificação ou promessa de domínio em 120 dias. Projetos podem levar várias sessões.
+- O mapa mantém os 120 identificadores. As fases 1–7 oferecem **70 exercícios guiados** (28 básicos e 42 extras opcionais), sete exemplos completos, dicas progressivas e soluções comentadas. Nas fases 8–120 permanecem 565 sugestões do catálogo anterior, ainda sem o mesmo aprofundamento. Os 600 itens legados de `roadmap.js` continuam preservados para compatibilidade; seus primeiros 35 itens são substituídos na leitura pelo conteúdo novo, sem recontar exercícios históricos. Não é certificação ou promessa de domínio em 120 dias. Projetos e fases podem levar várias sessões.
 - Os sites de LifeUp, Habitica e Finch foram bloqueados na pesquisa inicial (403). A pesquisa posterior consultou repositórios oficiais de LifeUp e Habitica; Finch permanece sem verificação. Veja fontes, datas e limites em [PESQUISA_REFERENCIAS.md](auditoria/PESQUISA_REFERENCIAS.md).
 
 ## Desenvolvimento e validação
@@ -54,6 +56,7 @@ Os horários alimentares e as porções do cachorro não foram confirmados. Os b
 ```sh
 npm run check
 npm test
+npm run test:content
 npm run build
 ```
 
@@ -65,6 +68,16 @@ python3 tests/browser_smoke.py
 ```
 
 O teste abre um contexto separado, sem alterar seu progresso, e verifica mínimo→normal, persistência ao reabrir, compra, estorno, Python, correção, exportação/restauração de backup, rejeição de backup inválido, mudança de dia e seis telas em largura de celular. Os testes de navegador são ferramenta de desenvolvimento; não são necessários para usar o aplicativo.
+
+`npm run test:content` exige Python 3.10+ somente no ambiente de desenvolvimento: executa exemplos e soluções autorais em processos locais temporários e confere saídas e entradas de borda. Não instala executor no app ou servidor. Para a leitura guiada, use também `python3 tests/browser_content.py` com o servidor iniciado.
+
+## Como estudar nas primeiras sete fases
+
+Em **Trilha Python**, abra a fase atual. Comece por **Antes de começar** e, na fase 1, **Preparar o ambiente**: há um caminho pelo editor IDLE sem exigir conhecimento de terminal. Execute o exemplo no Python do computador, tente os exercícios básicos e abra uma dica por vez se precisar. Soluções ficam recolhidas; comparar sua tentativa é parte da prática. Os extras são opcionais e não bloqueiam a fase.
+
+Preparar o ambiente não conta como exercício de programação resolvido. Registre os minutos efetivamente dedicados ao estudo e somente os exercícios realmente resolvidos e ainda não contados. Ler, consultar dicas/soluções e concluir o marco não acrescentam XP, moedas ou exercícios automaticamente. A contagem continua sendo autorregistro por sessão, sem detectar um mesmo enunciado informado novamente em outra sessão.
+
+Proposta editável para cada encontro: primeiro bloco de 60 min com revisão, explicação, exemplo e início da prática; dez minutos de pausa; segundo bloco de 60 min para continuar os básicos, escolher extras e registrar dúvidas. Esse roteiro pode ocupar vários dias. A mínima de cinco minutos continua disponível para retomar; não há obrigação de terminar uma fase por dia nem de fazer todos os extras.
 
 ## R0a: restauração recuperável
 

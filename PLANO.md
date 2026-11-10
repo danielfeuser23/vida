@@ -133,7 +133,7 @@ O aplicativo usa tecnologia web simples para abrir no celular e no computador. S
 
 Calendário escolhido: **todos os dias, 18:00–19:00 e 19:10–20:10**, com pausa de 10 minutos. O estudo é registrado em sessões; no máximo uma nova fase por dia pode ser marcada após concluir o pré-requisito e seu critério. Uma fase pode ocupar vários dias sem impedir o registro de prática. Dias sem estudo não criam uma pilha obrigatória. O cronograma segue America/Sao_Paulo.
 
-Cada sessão deve reunir: revisão breve, estudo guiado, exercícios obrigatórios, exercícios extras e registro do aprendizado. As atividades extras servem para quem termina a base cedo. Em temas complexos, uma fase pode precisar de vários dias: não avance só porque o relógio terminou. A fase concluída é autodeclarada a partir de critérios explícitos; o aplicativo não certifica nem executa automaticamente o seu código.
+Proposta editável para o primeiro bloco de 60 min: revisão breve, estudo guiado, exemplo e início da prática básica. Após dez minutos de pausa, o segundo bloco de 60 min permite continuar a prática, escolher extras opcionais e registrar dúvidas. Não é necessário usar todos os tipos de atividade em cada sessão. Uma fase pode precisar de vários dias: não avance só porque o relógio terminou. A fase concluída é autodeclarada a partir de critérios explícitos; o aplicativo não certifica nem executa automaticamente o seu código.
 
 Na aplicação, registre objetivo, minutos e exercícios novos de cada sessão, escolhendo prática de fase, revisão ou projeto. Crie um projeto para associar sessões de vários dias; concluir a fase não conclui o projeto automaticamente. Projetos livres e revisões continuam depois das 120 fases. Os exercícios são contagens por autorregistro, sem correção automática ou deduplicação de enunciados entre sessões.
 
@@ -146,6 +146,8 @@ Na aplicação, registre objetivo, minutos e exercícios novos de cada sessão, 
 
 
 O mapa do aplicativo detalha cada fase e seu critério. O calendário acima é uma expectativa editável, não obrigação de dominar um assunto por dia. Depois vêm módulos, orientação a objetos, tipagem, iteradores e geradores, decoradores, bibliotecas, banco de dados, APIs, concorrência, empacotamento, segurança, desempenho, arquitetura e projetos integradores. Não há promessa de ficar “super avançado” em um número fixo de dias.
+
+O piloto de conteúdo 1.3.0 aprofunda somente as fases 1–7: preparar e executar pelo IDLE, mensagens, variáveis, contas, palavras, entrada e revisão. Cada fase tem quatro exercícios básicos e seis extras opcionais, dicas e soluções recolhidas, erros comuns, revisão e critério próprio. São 70 programas de prática e sete exemplos completos. Instalação e preparo ficam separados da contagem de exercícios. Os 120 IDs, o histórico e os autorregistros anteriores permanecem; ampliar o catálogo não significa que exercícios novos já tenham sido resolvidos. As fontes oficiais e verificações locais estão em [ENTREGA_PYTHON_1_7.md](auditoria/ENTREGA_PYTHON_1_7.md).
 
 **Primeira semana com poucas prioridades:** preservar os cuidados essenciais do cachorro e o bloco de Python escolhido; leitura, casa e movimento podem começar pelas versões mínimas. “Leve” aqui significa não cobrar desempenho máximo em todas as áreas: duas horas diárias de estudo já são uma carga relevante. Não aumentar metas automaticamente.
 
